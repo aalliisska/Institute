@@ -1,0 +1,252 @@
+<style>
+    * {
+        text-decoration: none;
+    }
+
+    :active,
+    :hover,
+    :focus {
+        outline: 0;
+        outline-offset: 0;
+    }
+
+    .info {
+        margin: 50px 20% 50px;
+        line-height: 18px;
+        font-size: 16px;
+        font-family: 'EuclidCircularB', Arial, sans-serif;
+        color: #2f3337;
+        font-weight: 400;
+    }
+
+    .title {
+        color: #ff8562;
+        font-size: 32px;
+        line-height: 34px;
+        font-weight: 700;
+        overflow-y: hidden;
+    }
+
+    .subtitle {
+        line-height: 26px;
+        font-size: 24px;
+        font-weight: 400;
+        overflow: hidden;
+    }
+
+    .table-name {
+        line-height: 24px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .undertable-name {
+        line-height: 24px;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .main-info {
+        display: flex;
+        height: 240px;
+        border: 1px solid #ff8562;
+        border-radius: 20px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .main-info__person-photo {
+        border-radius: 17px;
+        height: 200px;
+        width: 200px;
+    }
+
+    .ruk {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .ruk__fio {
+        line-height: 24px;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .ruk__post {
+        line-height: 22px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #ff8562;
+        margin-bottom: 10px;
+    }
+
+    .extra {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .extra-text {
+        padding-left: 20px;
+    }
+
+    .ruk__mail-text {
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .ruk__mail-text {
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #ff8562;
+    }
+
+    .table {
+        border: 1px solid #ff8562;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .table-block {
+        overflow-x: auto;
+    }
+
+    th {
+        border: 1px solid #ff8562;
+        background-color: #fa5d1f26;
+        padding: 10px;
+    }
+
+    td {
+        padding: 10px;
+        border: 1px solid #ff8562;
+    }
+
+
+    @media screen and (max-width: 950px) {
+        .info {
+            margin: 30px 5% 30px;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        .main-info {
+            height: 500px;
+            flex-direction: column;
+        }
+
+        .main-info__person-photo {
+            height: 250px;
+            width: 250px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .ruk {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .subtitle {
+            line-height: 20px;
+            font-size: 18px;
+        }
+
+    }
+</style>
+
+<div class="info">
+    <a class="link" href="https://ispring.institute/sveden/">
+        <img class="return" src="https://static.tildacdn.com/tild3331-3037-4537-b438-353839393732/return.svg" alt="return">
+    </a>
+    <h1 class="title">Руководство</h1>
+    <h2 class="subtitle">Информация о руководителе образовательной организации</h2>
+    <p class="table-name">Руководитель образовательной организации</p>
+    <div class="main-info" itemprop="rucovodstvo">
+        <img class="main-info__person-photo"
+            src="https://static.tildacdn.com/tild6538-3462-4735-b366-313266353337/Kozlov_Alexander.png"
+            alt="Kozlov Alexander">
+        <div class="ruk">
+            <p class="ruk__fio" itemprop="fio">Козлов Александр Иванович</p>
+            <p class="ruk__post" itemprop="post">Директор</p>
+            <div class="ruk__phone extra">
+                <img class="ruk__phone-image" src="https://static.tildacdn.com/tild6330-6661-4562-b934-383232623733/person.svg" alt="phone">
+                <p class="ruk__phone-text extra-text" itemprop="telephone">+7 927 877 6577</p>
+            </div>
+            <div class="ruk__mail extra">
+                <img class="ruk__mail-image" src="https://static.tildacdn.com/tild3235-3031-4938-a261-393363623131/mail.svg" alt="mail">
+                <a class="ruk__mail-text extra-text" href="mailto:institute@ispring.ru"
+                    itemprop="email">institute@ispring.ru</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p class="table-name">Заместители руководителя образовательной организации</p>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>ФИО</th>
+                <th>Должность</th>
+                <th>Контактные телефоны</th>
+                <th>Адрес электронной почты</th>
+            </tr>
+            <tr align="center" itemprop="rucovodstvoZam">
+                <td itemprop="fio">Отсутствует</td>
+                <td itemprop="post">Отсутствует</td>
+                <td itemprop="telephone">Отсутствует</td>
+                <td itemprop="email">Отсутствует</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h2 class="subtitle">Информация о руководителях филиалов</h2>
+    <p class="undertable-name">Филиалы отсутствуют.</p>
+    <p class="table-name">Руководители филиалов</p>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th> Наименование филиала</th>
+                <th>ФИО</th>
+                <th>Должность</th>
+                <th>Контактные телефоны</th>
+                <th>Адрес электронной почты</th>
+            </tr>
+            <tr align="center" itemprop="rucovodstvoFil">
+                <td itemprop="nameFil">отсутствует</td>
+                <td itemprop="fio">отсутствует</td>
+                <td itemprop="post">отсутствует</td>
+                <td itemprop="telephone">отсутствует</td>
+                <td itemprop="email">отсутствует</td>
+            </tr>
+        </table>
+        <br>
+        <br>
+    </div>
+    <h2 class="subtitle">Информация о руководителях представительств</h2>
+    <p class="undertable-name">Представительства отсутствуют.</p>
+    <p class="table-name">Руководители представительств</p>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Наименование представительства</th>
+                <th>ФИО</th>
+                <th>Должность</th>
+                <th>Контактные телефоны</th>
+                <th>Адрес электронной почты</th>
+            </tr>
+            <tr align="center" itemprop="rucovodstvoRep">
+                <td itemprop="nameRep">отсутствует</td>
+                <td itemprop="fio">отсутствует</td>
+                <td itemprop="post">отсутствует</td>
+                <td itemprop="telephone">отсутствует</td>
+                <td itemprop="email">отсутствует</td>
+            </tr>
+        </table>
+    </div>
+</div>

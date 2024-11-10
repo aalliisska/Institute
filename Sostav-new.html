@@ -1,0 +1,3463 @@
+<style>
+  * {
+    text-decoration: none;
+  }
+
+  :active,
+  :hover,
+  :focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  .info {
+    margin: 50px 5% 50px 20%;
+    line-height: 20px;
+    font-family: 'EuclidCircularB', Arial, sans-serif;
+    color: #2f3337;
+    font-weight: 400;
+  }
+
+  .title {
+    padding-top: 15px;
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: 700;
+  }
+
+  .title_focus {
+    color: #ff8562;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    list-style: none;
+    background: url("https://static.tildacdn.com/tild3732-6661-4634-a365-363061666263/Polygon.svg") no-repeat;
+    padding-left: 30px;
+    line-height: 22px;
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  .people {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: baseline;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .person {
+    width: 250px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .person__photo {
+    border-radius: 360px 360px 0 360px;
+    width: 250px;
+    height: 250px;
+  }
+
+  .person__fio {
+    color: #ff8562;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0;
+  }
+
+  .person__post {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .person__link {
+    height: 40px;
+    float: right;
+    transition: all .4s ease-in-out;
+  }
+
+  .person__link:hover {
+    transform: rotate(-45deg);
+  }
+
+  .popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fa5d1f26;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    transition: all 0.8s ease 0s;
+  }
+
+  .popup:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .popup:target .popup__content {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+
+  .popup__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .popup__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+  }
+
+  .popup__content {
+    background-color: #fff;
+    max-width: max-content;
+    max-height: max-content;
+    border-radius: 20px;
+    margin: 0 100px 0 100px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    transform: translate(0px, -100%);
+  }
+
+  .popup__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 50px;
+    color: #ff8562;
+  }
+
+  .popup__person {
+    line-height: 22px;
+  }
+
+  .popup__person__photo {
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+
+  .popup__person__fio {
+    color: #ff8562;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .popup__person__post {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 18;
+  }
+
+  .td {
+    vertical-align: top;
+    padding: 0 10px 0 10px;
+  }
+
+  .img {
+    padding-right: 20px;
+    width: 25%;
+  }
+
+  .education {
+    width: 45%;
+  }
+
+  .popup__person__focus {
+    color: #ff8562;
+    font-size: 18;
+    font-weight: 600;
+  }
+
+  .line {
+    border-top: 3px solid #ff8562;
+    width: 200px;
+    margin-left: 0;
+  }
+
+
+  @media screen and (max-width: 950px) {
+    .info {
+      margin: 50px 5% 50px;
+    }
+
+    .people {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .popup__content {
+      margin: 0px;
+    }
+
+    .footer {
+      margin-top: -40px;
+    }
+
+    td {
+      display: inline-block;
+      white-space: normal;
+    }
+
+    .img {
+      width: 45%;
+    }
+
+    .education {
+      width: 45%;
+      padding-left: 20px;
+    }
+  }
+
+  @media screen and (max-width: 810px) {
+
+    li {
+      line-height: 22px;
+      font-size: 20px;
+    }
+
+    .person {
+      width: 300px;
+      height: 550px;
+    }
+
+    .person__photo {
+      border-radius: 360px 360px 0 360px;
+      width: 300px;
+      height: 300px;
+    }
+
+    .person__fio {
+      font-size: 28px;
+      line-height: 30px;
+    }
+
+    .person__post {
+      font-size: 24px;
+      line-height: 26px;
+    }
+
+    .person__link {
+      height: 60px;
+    }
+
+    .img {
+      width: 40%;
+    }
+
+    .education {
+      width: 40%;
+    }
+
+    .people {
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .popup__person__photo {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .person__photo {
+      width: 300px;
+      height: 300px;
+    }
+
+    .person {
+      width: 300px;
+      height: 550px;
+    }
+
+    li {
+      line-height: 18px;
+      font-size: 16px;
+    }
+
+    .img {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .education {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 15px;
+    }
+
+    .popup__content {
+      padding: 10px;
+    }
+
+    .popup__person__fio {
+      padding: 1px;
+    }
+
+    .popup__close {
+      right: 10px;
+      top: 10px;
+    }
+  }
+</style>
+
+
+<div class="info">
+  <a class="link" href="https://ispring.institute/sveden/">
+    <img class="return" src="https://static.tildacdn.com/tild3331-3037-4537-b438-353839393732/return.svg" alt="return">
+  </a>
+  <h1 class="title"><span class="title_focus">Педагогический</span> состав</h1>
+  <ul>
+    <li>09.03.04 Программная инженерия<br>Направленность (профиль): Проектирование и разработка программных систем
+    </li>
+  </ul>
+  <div class="people">
+    <div class="person">
+      <a href="#Arnaberdiev">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3734-3864-4737-b463-356365633535/Arnaberdiev_Kerim.png"
+          alt="Arnaberdiev Kerim">
+      </a>
+      <a href="#Arnaberdiev">
+        <p class="person__fio">Арнабердиев Авдыкерим</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">И.о. зав. кафедрой</p>
+        <a href="#Arnaberdiev">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Kozlov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6538-3462-4735-b366-313266353337/Kozlov_Alexander.png"
+          alt="Kozlov Alexander">
+      </a>
+      <a href="#Kozlov">
+        <p class="person__fio">Козлов Александр Иванович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Kozlov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Galochkin">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3437-6232-4665-b337-386539376438/Galochkin_Vladimir.jpg"
+          alt="Galochkin Vladimir">
+      </a>
+      <a href="#Galochkin">
+        <p class="person__fio">Галочкин Владимир Иванович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Galochkin">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Elmikeev">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3939-6265-4430-b131-626261643962/Elmikeev_Oleg.png"
+          alt="Elmikeev Oleg">
+      </a>
+      <a href="#Elmikeev">
+        <p class="person__fio">Ельмикеев Олег Рудольфович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Elmikeev">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Malov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3437-3362-4135-b032-323033633766/Malov_Alexey.png" alt="Malov Alexey">
+      </a>
+      <a href="#Malov">
+        <p class="person__fio">Малов Алексей Николаевич</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Malov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Uskov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6536-3039-4762-a137-623661653433/Uskov_Yury.jpg" alt="Uskov Yury">
+      </a>
+      <a href="#Uskov">
+        <p class="person__fio">Усков Юрий Викторович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Uskov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Karavaitseva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3431-3338-4762-b439-623033396132/Karavaitseva_Arina.png"
+          alt="Karavaitseva Arina">
+      </a>
+      <a href="#Karavaitseva">
+        <p class="person__fio">Каравайцева Арина Андреевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Karavaitseva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Moiseeva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3966-6634-4339-b361-393363383633/Moiseeva_Olga.png"
+          alt="Moiseeva Olga">
+      </a>
+      <a href="#Moiseeva">
+        <p class="person__fio">Моисеева Ольга Александровна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Moiseeva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Koroleva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6236-3138-4733-b030-653037616165/Koroleva_Anastasia.png"
+          alt="Koroleva Anastasia">
+      </a>
+      <a href="#Koroleva">
+        <p class="person__fio">Королева Анастасия Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Ассистент</p>
+        <a href="#Koroleva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Maslennikov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3238-6466-4236-b735-633461363535/Maslennikov_Alexande.jpg"
+          alt="Maslennikov Alexander">
+      </a>
+      <a href="#Maslennikov">
+        <p class="person__fio">Масленников Александр Степанович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Maslennikov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Popov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6430-6161-4834-b661-313732313035/Popov_Mikhail.png"
+          alt="Popov Mikhail">
+      </a>
+      <a href="#Popov">
+        <p class="person__fio">Попов Михаил Александрович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Popov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Vorobev">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3735-3831-4731-b864-363165353763/Vorobev_Dmitriy.png"
+          alt="Vorobev Dmitriy">
+      </a>
+      <a href="#Vorobev">
+        <p class="person__fio">Воробьев Дмитрий Николаевич</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Vorobev">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Vavilova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3333-6135-4939-b933-313764333532/Vavilova_Kseniya.png"
+          alt="Vavilova Kseniya">
+      </a>
+      <a href="#Vavilova">
+        <p class="person__fio">Вавилова Ксения Юрьевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Vavilova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Chemodanova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6630-3738-4435-a561-363438366339/Chemodanova_Maria.png"
+          alt="Chemodanova Maria">
+      </a>
+      <a href="#Chemodanova">
+        <p class="person__fio">Чемоданова Мария Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Chemodanova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Rozhentseva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3365-3430-4138-b134-386434633864/Rozhentsova.jpg"
+          alt="Rozhentseva Lubov">
+      </a>
+      <a href="#Rozhentseva">
+        <p class="person__fio">Роженцева Любовь Сергеевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Rozhentseva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Serkin">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6135-3965-4034-b362-643934656131/Serkin_Pavel.jpg" alt="Serkin Pavel">
+      </a>
+      <a href="#Serkin">
+        <p class="person__fio">Серкин Павел Евгеньевич</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Serkin">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Tanikov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3432-3138-4734-b931-623161353736/Tanikov_Andrey.png"
+          alt="Tanikov Andrey">
+      </a>
+      <a href="#Tanikov">
+        <p class="person__fio">Таников Андрей Александрович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Tanikov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Grebnev">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3531-6535-4330-a335-306665326535/Grebnev_Ivan.jpg" alt="Grebnev Ivan">
+      </a>
+      <a href="#Grebnev">
+        <p class="person__fio">Гребнев Иван Вячеславович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Grebnev">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Parsaeva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6437-6235-4566-b538-656230316231/Parsaeva_Irina.jpg"
+          alt="Parsaeva Irina">
+      </a>
+      <a href="#Parsaeva">
+        <p class="person__fio">Парсаева Ирина Вениаминовна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Parsaeva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Smoylov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3739-6139-4631-b937-626334373061/Smoylov_Andrey.jpg"
+          alt="Smoylov Andrey">
+      </a>
+      <a href="#Smoylov">
+        <p class="person__fio">Смойлов Андрей Александрович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Smoylov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Rybakova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3464-6663-4965-b738-386237366233/Rybakova_Elena.png"
+          alt="Rybakova Elena">
+      </a>
+      <a href="#Rybakova">
+        <p class="person__fio">Рыбакова Елена Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Rybakova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="Arnaberdiev" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3734-3864-4737-b463-356365633535/Arnaberdiev_Kerim.png"
+                alt="Arnaberdiev Kerim"><br>
+              <p class="popup__person__fio" itemprop="fio">Арнабердиев Авдыкерим</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">И.о. зав. кафедрой, старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+              <p>Руководитель отдела разработки, ООО "Ричмедиа"</p>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее, специалитет<br>
+                ФГБОУ ВО "Поволжский государственный технологический университет"<br>
+                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 230105 Программное
+                  обеспечение вычислительной
+                  техники и
+                  автоматизированных систем</span><br><br>
+                <span itemprop="teachingLevel"> Высшее, аспирантура<br>
+                  ФГБОУ ВО "Поволжский государственный технологический университет"</span><br>
+                <span itemprop="teachingQual">Квалификация: Исследователь.
+                  Преподаватель-исследователь</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 38.06.01 Экономика</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">5</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">4</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Веб-программирование;
+                Frontend-программирование; Комбинаторные алгоритмы; Учебная практика</p>
+              <p><span class="popup__person__focus">Тип практики:</span><br>ознакомительная; производственная;
+                проектно-технологическая</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о
+                повышении квалификации № 0000012 от 31.01.2023
+                "Разработка электронных курсов", 70 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298819 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов<br>
+                Удостоверение о повышении квалификации № 120000000441 от 13.05.2023 "Педагогика и
+                психология
+                преподавания в системе дополнительного образования"</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Kozlov" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6538-3462-4735-b366-313266353337/Kozlov_Alexander.png"
+                alt="Kozlov Alexander"><br>
+              <p class="popup__person__fio" itemprop="fio">Козлов Александр Иванович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Доцент</p><br>
+              <span itemprop="degree">Кандидат физико-математических наук</span><br>
+              <span itemprop="academStat">Доцент по кафедре математики и методики обучения
+                математике</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный педагогический институт им. Н. К. Крупской<br>
+                <span itemprop="teachingQual">Квалификация: Учитель математики и физики</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Математика</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">24</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">21</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Дискретная математика;
+                Высшая математика; Комбинаторные алгоритмы; Основы теории вероятностей и математическая
+                статистика</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в образовании)
+              </p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Диплом о профессиональной переподготовке № ПС 00012 от 31.01.2018 "Разработка и
+                проектирование программных систем. Базовый уровень", 1728 часов<br>
+                Удостоверение о повышении квалификации № 120000000275 от 01.11.2020
+                "Философско-методологические и этические основы современного образования", 24 часа<br>
+                Удостоверение о повышении квалификации № 231200961189 от 22.12.2021 "Использование
+                интерактивных математических систем и различных педагогических методик при обучении
+                школьников 5-11 классов математике на профильном уровне и при подготовке к олимпиадам",
+                72 часа<br>
+                Удостоверение о повышении квалификации № 5583583449АК от 29.12.2021 "Принципы
+                проектирования
+                и оценки педагогического модуля", 16 часов<br>
+                Удостоверение о повышении квалификации № 05-07/ВО/ОТ-ДО от 28.02.2022 "Требования охраны
+                труда. Основные изменения в трудовом законодательстве, вступающие с 01 марта 2022 года в
+                области охраны труда", 16 часов<br>
+                Удостоверение о повышении квалификации № 0000004 от 23.01.2023 "Разработка электронных
+                курсов", 70 часов<br>
+                Удостоверение о повышении квалификации № 722023000556 от 11.03.2023 "Деятельностное
+                математическое образование", 24 часа<br>
+                Удостоверение о повышении квалификации № 122414352035 от 25.05.2023 "Подготовка
+                экспертов региональных предметных комиссий по проверке выполнения заданий с развернутным
+                ответом по математике при проведении государственной итоговой аттестации (ГИА-11)", 26
+                часов<br>
+                Удостоверение о повышении квалификации № 122416299381 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Galochkin" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3437-6232-4665-b337-386539376438/Galochkin_Vladimir.jpg"
+                alt="Galochkin Vladimir"><br>
+              <p class="popup__person__fio" itemprop="fio">Галочкин Владимир Иванович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Доцент</p><br>
+              <span itemprop="degree">Кандидат технических наук</span><br>
+              <span itemprop="academStat">Доцент по кафедре информатики и системного
+                программирования</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Московский государственный университет им. М.В.Ломоносова<br>
+                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Математика</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">52</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">47</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Веб-программирование</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 120000000369 от 03.04.2021 "Особенности
+                современного образовательного процесса. Базовые траектории обучения, технологии и
+                методики
+                преподавания учебных дисциплин", 40 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298824 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов<br>
+                Удостоверение о повышении квалификации № 120000000443 от 13.05.2023 "Педагогика и
+                психология
+                преподавания в системе дополнительного образования"</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Elmikeev" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3939-6265-4430-b131-626261643962/Elmikeev_Oleg.png"
+                alt="Elmikeev Oleg"><br>
+              <p class="popup__person__fio" itemprop="fio">Ельмикеев Олег Рудольфович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Кандидат педагогических наук</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский политехнический институт им. М. Горького<br>
+                <span itemprop="teachingQual">Квалификация: Инженер-конструктор-технолог</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Конструирование и
+                  производство электронно-вычислительной
+                  аппаратуры</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">40</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">37</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Архитектура вычислительных
+                систем; Машинно-зависимые языки программирования</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о
+                повышении квалификации № 122416298825 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Malov" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3437-3362-4135-b032-323033633766/Malov_Alexey.png"
+                alt="Malov Alexey"><br>
+              <p class="popup__person__fio" itemprop="fio">Малов Алексей Николаевич</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+              <p>Главный архитектор,отдел разработки ПО, ООО "Ричмедиа"</p>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный технический университет<br>
+                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 230105 Программное
+                  обеспечение вычислительной
+                  техники и
+                  автоматизированных систем</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">20</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">14</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Объектно-ориентированное
+                программирование; Проектный практикум</p>
+              <p><span class="popup__person__focus">Тип практикума:</span><br>десктоп разработка</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 1200 0000448 от 13.05.2023 "Педагогика и
+                психология преподавания в системе дополнительного образования", 16 часов<br>
+                Удостоверение о повышении квалификации № 122416299384 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Uskov" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6536-3039-4762-a137-623661653433/Uskov_Yury.jpg"
+                alt="Uskov Yury"><br>
+              <p class="popup__person__fio" itemprop="fio">Усков Юрий Викторович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+              <p>Директор, ООО "ПС лаб"</p>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный технический университет<br>
+                <span itemprop="teachingQual">Квалификация: Инженер-программист</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 230105 Программное
+                  обеспечение вычислительной
+                  техники и
+                  автоматизированных систем</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">27</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">11</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Основы программирования</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 120000000333 от 01.11.2020
+                "Философско-методологические и этические основы современного образования", 24 часа<br>
+                Удостоверение о повышении квалификации № 0000012 от 31.01.2023 ""Разработка электронных
+                курсов"", 70 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298834 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов<br>
+                Удостоверение о повышении квалификации № 120000000454 от 13.05.2023 "Педагогика и
+                психология
+                преподавания в системе дополнительного образования", 16 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Karavaitseva" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3431-3338-4762-b439-623033396132/Karavaitseva_Arina.png"
+                alt="Karavaitseva Arina"><br>
+              <p class="popup__person__fio" itemprop="fio">Каравайцева Арина Андреевна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+              <p>Инженер-программист, ООО "Ричмедиа"</p>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее, специалитет<br>
+                ФГБОУ ВО "Поволжский государственный технологический университет"<br>
+                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 09.03.03 Прикладная
+                  информатика</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">6</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">5</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Веб-программирование;
+                Frontend-программирование; Базы данных</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Диплом о профессиональной переподготовке № 120000000021 от 28.01.2021 "Разработка и
+                проектирование программных систем. Базовый уровень", 1728 часов<br>
+                Удостоверение о повышении квалификации № 122416299380 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Moiseeva" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3966-6634-4339-b361-393363383633/Moiseeva_Olga.png"
+                alt="Moiseeva Olga"><br>
+              <p class="popup__person__fio" itemprop="fio">Моисеева Ольга Александровна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Кандидат педагогических наук</span><br>
+              <span itemprop="academStat">Доцент по кафедре теории и методики технологии и
+                профессионального образования</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный педагогический институт им. Н.К. Крупской<br>
+                <span itemprop="teachingQual">Квалификация: Учитель технологии и
+                  предпринимательства</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Технология и
+                  предпринимательство</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">22</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">22</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Инженерная графика</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о
+                повышении квалификации № 0000012 от 31.01.2023
+                "Разработка электронных курсов", 70 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298819 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов<br>
+                Удостоверение о повышении квалификации № 120000000441 от 13.05.2023 "Педагогика и
+                психология
+                преподавания в системе дополнительного образования"</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Koroleva" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6236-3138-4733-b030-653037616165/Koroleva_Anastasia.png"
+                alt="Koroleva Anastasia"><br>
+              <p class="popup__person__fio" itemprop="fio">Королева Анастасия Владимировна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Ассистент</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+              <p>Специалист по маркетингу, ООО "Ричмедиа"</p>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                ФГБОУ ВО "Марийский государственный университет"<br>
+                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 44.03.05
+                  Педагогическое
+                  образование (с двумя профилями
+                  подготовки)</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">2</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">1</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Высшая математика</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 0000005 от 23.01.2023 "Разработка
+                электронных
+                курсов", 70 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298827 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными
+                возможностями
+                здоровья", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Maslennikov" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3238-6466-4236-b735-633461363535/Maslennikov_Alexande.jpg"
+                alt="Maslennikov Alexander"><br>
+              <p class="popup__person__fio" itemprop="fio">Масленников Александр Степанович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Доцент</p><br>
+              <span itemprop="degree">Кандидат физико-математических наук</span><br>
+              <span itemprop="academStat">Доцент по кафедре физики</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Казанский государственный университет имени В.И. Ульянова-Ленина<br>
+                <span itemprop="teachingQual">Квалификация: Радиофизик</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Радиофизика и
+                  электроника</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">44</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">44</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Физика</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженерия (Направленность (профиль) Проектирование и разработка
+                программных систем)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 25924 от 29.05.2022 "Технологии искусственного
+                интеллекта в проектировании образовательных программ", 40 часов<br>
+                Удостоверение о повышении квалификации № 087 от 27.06.2022 "Обучение и проверка знаний
+                требований охраны труда", 40 часов<br>
+                Удостоверение о повышении квалификации № 0000006 от 23.01.2023 "Разработка электронных
+                курсов", 70 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298828 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Popov" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6430-6161-4834-b661-313732313035/Popov_Mikhail.png"
+                alt="Popov Mikhail"><br>
+              <p class="popup__person__fio" itemprop="fio">Попов Михаил Александрович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее, бакалавриат<br>
+                ФГАОУ ВПО "Крымский федеральный университет имени В. И. Вернадского"<br>
+                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 46.03.01
+                  История</span><br><br>
+                <span itemprop="teachingLevel">
+                  Высшее, магистратура<br>
+                  ФГАОУ ВПО "Крымский федеральный университет имени В. И. Вернадского"</span><br>
+                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 46.04.01
+                  История</span><br><br>
+                <span itemprop="teachingLevel">
+                  Высшее, аспирантура<br>
+                  ФГБНИУ "Российский научно-исследовательский институт культурного и природного наследия имени С.Д.
+                  Лихачёва"</span><br>
+                <span itemprop="teachingQual">Квалификация: Исследователь.
+                  Преподаватель-исследователь</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 51.06.01 Культурология</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">3</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">1</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>История (история России,
+                всеобщая история); Динамика цивилизаций</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)
+              </p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 0000007 от 23.01.2023 "Разработка электронных
+                курсов", 70 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298830 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов<br>
+                Удостоверение о повышении квалификации № 771803459733 от 26.12.2023 "Память и медиа", 48 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Vorobev" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3735-3831-4731-b864-363165353763/Vorobev_Dmitriy.png"
+                alt="Vorobev Dmitriy"><br>
+              <p class="popup__person__fio" itemprop="fio">Воробьев Дмитрий Николаевич</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Доцент</p><br>
+              <span itemprop="degree">Доцент по кафедре философии</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Чувашский государственный университет им. И. Н. Ульянова<br>
+                <span itemprop="teachingQual">Квалификация: Географ. Преподаватель</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: География</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">20</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">20</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Философия; Введение в
+                научную деятельность</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Диплом о профессиональной переподготовке № 212403670801 от 28.04.2017 "Философия, этика
+                и
+                религиоведение", 252 часа<br>
+                Удостоверение о повышении квалификации № БК22 00334331 от 07.02.2022 "Партнерства в
+                цифровом
+                образовании 2022-2030. Базовый курс", 72 часа<br>
+                Удостоверение о повышении квалификации № 212409278398 от 29.04.2022 "Педагог высшего
+                образования: инклюзивное образование в вузе, оказание первой помощи", 72 часа<br>
+                Удостоверение о повышении квалификации № 0000002 от 23.01.2023 "Разработка электронных
+                курсов", 70 часов<br>
+                Удостоверение о повышении квалификации № НБ23 00349405 от 28.01.2023 "Гибкие навыки:
+                компетенции новых ФГОС. Базовый курс", 72 часа<br>
+                Удостоверение о
+                повышении квалификации № 122416298822 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов<br>
+                Удостоверение о
+                повышении квалификации № КО23 00362951 от 06.12.2023
+                "Интерактивное оценивание и качество образования - 2023", 18 часов<br>
+                Удостоверение о повышении квалификации № ЛБ24 00364139 от 31.01.2024 "Личностно-ориентированное
+                цифровое образование. Базовый курс", 72 часа</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Vavilova" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3333-6135-4939-b933-313764333532/Vavilova_Kseniya.png"
+                alt="Vavilova Kseniya"><br>
+              <p class="popup__person__fio" itemprop="fio">Вавилова Ксения Юрьевна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Доцент</p><br>
+              <span itemprop="degree">Кандидат филологических наук</span><br>
+              <span itemprop="academStat">Доцент по специальности "Германские языки"</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                ФГБОУ ВО "Марийский государственный университет"<br>
+                <span itemprop="teachingQual">Квалификация: Лингвист, переводчик</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Перевод и
+                  переводоведение</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">17</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">17</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Иностранный язык</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Диплом о
+                профессиональной переподготовке №
+                122408210060 от 31.01.2019
+                "Педагогическое образование: дисциплины профессиональной подготовки в сфере
+                иноязычной
+                коммуникации", 252 часа<br>
+                Диплом о профессиональной переподготовке № 122409749160 от 15.11.2019 "Лингвистика:
+                дисциплины в сфере преподавания информационно-коммуникационных технологий в области
+                иностранных языков и перевода", 252 часа<br>
+                Удостоверение о повышении квалификации № 122413912309 от 15.10.2021 "Современные
+                информационно-коммуникационные технологии в деятельности преподавателя в условиях
+                реализации
+                ФГОС ВО", 24 часа<br>
+                Удостоверение о повышении квалификации № 122413912517 от 29.10.2021 "Противодействие
+                коррупции в образовательной организации", 36 часов<br>
+                Удостоверение о повышении квалификации № 122409433151 от 25.05.2022 "Подготовка
+                экспертов
+                региональных предметных комиссий по проверке выполнения заданий с развернутным
+                ответом
+                по
+                английскому языку при проведении государственной итоговой аттестации (ГИА-11)", 26
+                часов<br>
+                Удостоверение о повышении квалификации № 0000001 от 23.01.2023 "Разработка
+                электронных
+                курсов", 70 часов<br>
+                Удостоверение о повышении квалификации № 122416298784 от 18.04.2023 "Подготовка
+                обучающихся
+                к государственной итоговой аттестации", 28 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298821 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными
+                возможностями
+                здоровья", 36 часов<br>
+                Удостоверение о повышении квалификации № 122416298886 от 06.05.2023 "Инновационные
+                технологии в преподавании иностранных языков", 26 часов<br>
+                Удостоверение о повышении квалификации № 122416299039 от 15.06.2023 "Редактор
+                перевода",
+                30
+                часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Chemodanova" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6630-3738-4435-a561-363438366339/Chemodanova_Maria.png"
+                alt="Chemodanova Maria"><br>
+              <p class="popup__person__fio" itemprop="fio">Чемоданова Мария Владимировна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее, специалитет<br>
+                ФГБОУ ВО "Марийский государственный университет"<br>
+                <span itemprop="teachingQual">Квалификация: Педагог-психолог</span><br>
+                <span itemprop="employeeQualification">50706 Педагогика и
+                  психология</span><br><br>
+                <span itemprop="teachingLevel">
+                  Высшее, магистратура<br>
+                  ФГБОУ ВО "Марийский государственный университет"</span><br>
+                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 37.04.01 Психология</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">7</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">6</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Коммуникации; Общая
+                педагогика и психология</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Диплом о профессиональной переподготовке № 122408209660 от 29.12.2018 "Преподаватель
+                образовательной организации высшего образования", 252 часа<br>
+                Диплом о профессиональной переподготовке № 122408210111 от 31.01.2019 "Психология:
+                психологические дисциплины", 252 часа<br>
+                Диплом о профессиональной переподготовке № 122411045540 от 13.07.2020
+                "Психолого-педагогическое образование: преподавание дисциплин профессиональной
+                подготовки
+                педагогов-психологов в образовательной организации высшего образования", 252
+                часа<br>
+                Удостоверение о повышении квалификации № 160300022618 от 30.11.2021 "Цифровые
+                технологии
+                в
+                преподавании профильных дисциплин", 144 часа<br>
+                Удостоверение о повышении квалификации № 0000010 от 23.01.2023 "Разработка
+                электронных
+                курсов", 70 часов<br>
+                Удостоверение о
+                повышении квалификации № 122416298835 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными
+                возможностями
+                здоровья", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Rozhentseva" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3365-3430-4138-b134-386434633864/Rozhentsova.jpg"
+                alt="Rozhentseva Lubov"><br>
+              <p class="popup__person__fio" itemprop="fio">Роженцева Любовь Сергеевна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                МГОУ ВПО "Марийский государственный университет"<br>
+                <span itemprop="teachingQual">Квалификация: Историк, преподаватель истории</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: История</span><br><br>
+                <span itemprop="teachingLevel">
+                  Высшее, магистратура<br>
+                  ФГБОУ ВПО "Марийский государственный университет"</span><br>
+                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: История</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">17</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">1</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>История (История России,
+                всеобщая история); Динамика цивилизаций</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Диплом о профессиональной переподготовке №122409749398 от 18.12.2019 "Музейное дело и
+                охрана культурного и природного наследия", 360 часов<br>
+                Удостоверение о повышении квалификации №0373975 от 10.11.2016 "Основы православного
+                экскурсоведения", 72 часа</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Serkin" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6135-3965-4034-b362-643934656131/Serkin_Pavel.jpg"
+                alt="Serkin Pavel"><br>
+              <p class="popup__person__fio" itemprop="fio">Серкин Павел Евгеньевич</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Преподаватель</p><br>
+              <span itemprop="degree">андидат философских наук</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный технический университет<br>
+                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: радиосвязь, радиовещание
+                  и телевидение</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">21</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">1
+                    месяц</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Естествознание</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 122416299389 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Tanikov" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3432-3138-4734-b931-623161353736/Tanikov_Andrey.png"
+                alt="Tanikov Andrey"><br>
+              <p class="popup__person__fio" itemprop="fio">Таников Андрей Александрович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный технический университет<br>
+                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: безопасность
+                  жизнедеятельности</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">20</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">11</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Безопасность
+                жизнедеятельности</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 122408849477 от 07.03.2019 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья в
+                образовательной организации высшего образования", 72 часа<br>
+                Удостоверение о повышении квалификации № 122408849661 от 15.03.2019 "Оказание первой
+                помощи работниками образовательной организации", 36 часа</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Grebnev" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3531-6535-4330-a335-306665326535/Grebnev_Ivan.jpg"
+                alt="Grebnev Ivan"><br>
+              <p class="popup__person__fio" itemprop="fio">Гребнев Иван Вячеславович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Доцент</p><br>
+              <span itemprop="degree">Кандидат философских наук</span><br>
+              <span itemprop="academStat">Доцент по кафедре физического воспитания</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский ордена Дружбы народов политехнический институт им. А. М. Горького<br>
+                <span itemprop="teachingQual">Квалификация: Инженер-гидротехник</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Гидромелиорация</span><br><br>
+                <span itemprop="teachingLevel">
+                  Высшее,<br>
+                  Марийский ордена "Знак почета" государственный педагогический институт им. Н. К. Крупской</span><br>
+                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Физическая культура</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">37</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">30</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Физическая культура и спорт</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Диплом о профессиональной переподготовке № 772411089052 от 29.07.2021 "Менеджмент и
+                маркетинг в спорте: управлениеспортивным клубом, лигой, федерацией", 540 часов<br>
+                Удостоверение о повышении квалификации № 24465 от 26.02.2021 "Проектировщик
+                электронного курса", 72 часа<br>
+                Удостоверение о повышении квалификации № 122413346144 от 25.02.2021 "Тренировочная
+                деятельность и управление сервисом в сфере фитнеса", 72 часа</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Parsaeva" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6437-6235-4566-b538-656230316231/Parsaeva_Irina.jpg"
+                alt="Parsaeva Irina"><br>
+              <p class="popup__person__fio" itemprop="fio">Парсаева Ирина Вениаминовна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Доцент</p><br>
+              <span itemprop="degree">Мастер спорта СССР по спортивной гимнастике</span><br>
+              <span itemprop="academStat">Доцент по кафедре физического воспитания</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский ордена Знак Почета государственный педагогический институт им. Н. К. Крупской<br>
+                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Физическое
+                  воспитание</span><br><br>
+                <span itemprop="teachingLevel">
+                  Высшее, специалитет<br>
+                  ФГБОУ ВО "Марийский государственный университет" г. Йошкар-Олы</span><br>
+                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Физическое воспитание</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">43</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">43</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Общая физическая подготовка;
+                Секция Фитнес; Занятия в спортивных секциях</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 122411044067 от 11.09.2020 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья в
+                образовательной организации высшего образования", 72 часа<br>
+                Удостоверение о повышении квалификации № 24447 от 16.02.2021 "Основы создания
+                электронных
+                курсов в "Moodle", 36 часов<br>
+                Удостоверение о повышении квалификации № 122416299386 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Smoylov" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3739-6139-4631-b937-626334373061/Smoylov_Andrey.jpg"
+                alt="Smoylov Andrey"><br>
+              <p class="popup__person__fio" itemprop="fio">Смойлов Андрей Александрович</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный педагогический институт им. Н. К. Крупской<br>
+                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Физическая культура и
+                  спорт</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">22</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">22</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Секция Регби; Секция Регби
+                для команды</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 160300013232 от 27.07.2021 "Цифровые технологии
+                в
+                преподавании профильных дисциплин", 144 часа<br>
+                Удостоверение о повышении квалификации № У2021072838 от 01.09.2021
+                "Психолого-педагогическая
+                компетентность педагога", 72 часа<br>
+                Удостоверение о
+                повышении квалификации № 122416298833 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Rybakova" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3464-6663-4965-b738-386237366233/Rybakova_Elena.png"
+                alt="Rybakova Elena"><br>
+              <p class="popup__person__fio" itemprop="fio">Рыбакова Елена Владимировна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский ордена Знак Почета государственный педагогический институт им. Н. К. Крупской<br>
+                <span itemprop="teachingQual">Квалификация: Учитель физической культуры</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Физическая культура</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">31</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">31</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Секция Волейбол;
+                Секция Волейбол для команды</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.04 Программная инженения (Направленность (профиль) Проектирование и
+                разработка программных систем)<br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 24470 от 16.02.2021 "Проектировщик
+                электронного
+                курса", 72 часа<br>
+                Удостоверение о повышении квалификации № 8468 от 25.02.2021 "Тренировочная
+                деятельность
+                и
+                управление сервисом в сфере фитнеса", 72 часа<br>
+                Удостоверение о
+                повышении квалификации № 122416298831 от 21.04.2023
+                "Организация образовательного процесса для инвалидов и лиц с ограниченными
+                возможностями
+                здоровья", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li>09.03.03 Прикладная информатика<br>Направленность (профиль): Маркетинг цифрового продукта</li>
+  </ul>
+  <div class="people">
+    <div class="person">
+      <a href="#Krasilnikova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3730-6364-4137-b731-336335353334/Krasilnikova_Malika.jpg"
+          alt="Krasilnikova Malika">
+      </a>
+      <a href="#Krasilnikova">
+        <p class="person__fio">Красильникова Малика Абдуджалиловна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Krasilnikova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Skulkina">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3139-3566-4533-b737-333837343033/Skulkina_Anastasia.png"
+          alt="Skulkina Anastasia">
+      </a>
+      <a href="#Skulkina">
+        <p class="person__fio">Скулкина Анастасия Александровна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Skulkina">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Zherebtsova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3463-3733-4162-b931-643537313364/Zherebtsova_Olga.jpg"
+          alt="Zherebtsova Olga">
+      </a>
+      <a href="#Zherebtsova">
+        <p class="person__fio">Жеребцова Ольга Вениаминовна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Zherebtsova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Galochkin">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3437-6232-4665-b337-386539376438/Galochkin_Vladimir.jpg"
+          alt="Galochkin Vladimir">
+      </a>
+      <a href="#Galochkin">
+        <p class="person__fio">Галочкин Владимир Иванович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Galochkin">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Balysheva">
+        <img class="person__photo" src="https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png"
+          alt="Balysheva Marina">
+      </a>
+      <a href="#Balysheva">
+        <p class="person__fio">Балышева Марина Андреевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Balysheva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Lezhnina">
+        <img class="person__photo" src="https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png"
+          alt="Lezhnina Marina">
+      </a>
+      <a href="#Lezhnina">
+        <p class="person__fio">Лежнина Марина Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Lezhnina">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Norkin">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3463-3938-4230-a533-343431383861/Norkin_Nikolay.jpg"
+          alt="Norkin Nikolay">
+      </a>
+      <a href="#Norkin">
+        <p class="person__fio">Норкин Николай Анатольевич</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Norkin">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Kozlov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6538-3462-4735-b366-313266353337/Kozlov_Alexander.png"
+          alt="Kozlov Alexander">
+      </a>
+      <a href="#Kozlov">
+        <p class="person__fio">Козлов Александр Иванович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Kozlov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Popov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6430-6161-4834-b661-313732313035/Popov_Mikhail.png"
+          alt="Popov Mikhail">
+      </a>
+      <a href="#Popov">
+        <p class="person__fio">Попов Михаил Александрович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Popov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Vorobev">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3735-3831-4731-b864-363165353763/Vorobev_Dmitriy.png"
+          alt="Vorobev Dmitriy">
+      </a>
+      <a href="#Vorobev">
+        <p class="person__fio">Воробьев Дмитрий Николаевич</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Vorobev">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Vavilova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3333-6135-4939-b933-313764333532/Vavilova_Kseniya.png"
+          alt="Vavilova Kseniya">
+      </a>
+      <a href="#Vavilova">
+        <p class="person__fio">Вавилова Ксения Юрьевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Vavilova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Chemodanova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6630-3738-4435-a561-363438366339/Chemodanova_Maria.png"
+          alt="Chemodanova Maria">
+      </a>
+      <a href="#Chemodanova">
+        <p class="person__fio">Чемоданова Мария Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Chemodanova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Rozhentseva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3365-3430-4138-b134-386434633864/Rozhentsova.jpg"
+          alt="Rozhentseva Lubov">
+      </a>
+      <a href="#Rozhentseva">
+        <p class="person__fio">Роженцева Любовь Сергеевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Rozhentseva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Serkin">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6135-3965-4034-b362-643934656131/Serkin_Pavel.jpg" alt="Serkin Pavel">
+      </a>
+      <a href="#Serkin">
+        <p class="person__fio">Серкин Павел Евгеньевич</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Serkin">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Tanikov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3432-3138-4734-b931-623161353736/Tanikov_Andrey.png"
+          alt="Tanikov Andrey">
+      </a>
+      <a href="#Tanikov">
+        <p class="person__fio">Таников Андрей Александрович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Tanikov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Hodykina">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6539-6563-4235-b232-386466323435/Ekaterina_Hodykina.jpg"
+          alt="Hodykina Ekarerina">
+      </a>
+      <a href="#Hodykina">
+        <p class="person__fio">Ходыкина Екатерина Сергеевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Hodykina">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Grebnev">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3531-6535-4330-a335-306665326535/Grebnev_Ivan.jpg" alt="Grebnev Ivan">
+      </a>
+      <a href="#Grebnev">
+        <p class="person__fio">Гребнев Иван Вячеславович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Grebnev">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Parsaeva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6437-6235-4566-b538-656230316231/Parsaeva_Irina.jpg"
+          alt="Parsaeva Irina">
+      </a>
+      <a href="#Parsaeva">
+        <p class="person__fio">Парсаева Ирина Вениаминовна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Parsaeva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Smoylov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3739-6139-4631-b937-626334373061/Smoylov_Andrey.jpg"
+          alt="Smoylov Andrey">
+      </a>
+      <a href="#Smoylov">
+        <p class="person__fio">Смойлов Андрей Александрович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Smoylov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Rybakova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3464-6663-4965-b738-386237366233/Rybakova_Elena.png"
+          alt="Rybakova Elena">
+      </a>
+      <a href="#Rybakova">
+        <p class="person__fio">Рыбакова Елена Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Rybakova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="Krasilnikova" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3730-6364-4137-b731-336335353334/Krasilnikova_Malika.jpg"
+                alt="Krasil'nikova Malika"><br>
+              <p class="popup__person__fio" itemprop="fio">Красильникова Малика Абдуджалиловна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Негосударственное образовательное учреждение "СОВРЕМЕННАЯ ГУМАНИТАРНАЯ АКАДЕМИЯ"<br>
+                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Менеджмент</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">30</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">1</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Креативные методологии</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                отсутвуют</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Skulkina" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3139-3566-4533-b737-333837343033/Skulkina_Anastasia.png"
+                alt="Skulkina Anastasia"><br>
+              <p class="popup__person__fio" itemprop="fio">Скулкина Анастасия Александровна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+              <p>Дизайнер, ООО "Ричмедиа"</p>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                ФГБОУ ВО "Поволжский государственный технологический университет"<br>
+                <span itemprop="teachingQual">Квалификация: Экономист</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Финансы и кредит</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">8</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">1</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Основы дизайна;
+                Коммуникационный дизайн; Креативные методологии; Интерактивный дизайн</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 1200 0000451 от 13.05.2023 "Педагогика и
+                психология преподавания в системе дополнительного образования", 16 часов<br>
+                Удостоверение о повышении квалификации № 122416299390 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Zherebtsova" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3463-3733-4162-b931-643537313364/Zherebtsova_Olga.jpg"
+                alt="Zherebtsova Olga"><br>
+              <p class="popup__person__fio" itemprop="fio">Жеребцова Ольга Вениаминовна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+              <p>Руководитель образовательных проектов, ООО "Ричмедиа"</p>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                ФГБОУ ВО "Марийский государственный университет"<br>
+                <span itemprop="teachingQual">Квалификация: Математик</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Прикладная
+                  математика</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">22</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">19</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Основы программирования;
+                Практикум решения задач по программированию; Математические основы информатики</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)<br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                "Диплом о профессиональной переподготовке № Д2019011698 от 01.08.2019 ""Менеджмент
+                образовательной организации"", 250 часов<br>
+                Удостоверение о повышении квалификации № 2237 от 20.11.2021 ""Государственная
+                регламентация образовательной деятельности"", 24 часа<br>
+                Удостоверение о повышении квалификации № 07-07/ВО/ОТ-ДО от 28.02.2022 ""Требования
+                охраны труда. Основные изменения в трудовом законодательстве, вступающие с 01 марта
+                2022
+                года в области охраны труда"", 16 часов<br>
+                Удостоверение о повышении квалификации № 120000000400 от 26.08.2022 ""Системное
+                развитие
+                навыков программирования в условиях обновленного ФГОС ООО"", 25 часов<br>
+                Удостоверение о повышении квалификации № 2626 от 01.10.2022 ""Разработка и
+                реализация
+                основной образовательной программы в соответствии с законодательством"", 24 часа<br>
+                Удостоверение о повышении квалификации № 0000003 от 23.01.2023 ""Разработка
+                электронных
+                курсов"", 70 часов<br>
+                Удостоверение о повышении квалификации № 122416298826 от 21.04.2023 ""Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями
+                здоровья"",
+                36 часов"</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Balysheva" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo" src="https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png"
+                alt="Balysheva Marina"><br>
+              <p class="popup__person__fio" itemprop="fio">Балышева Марина Андреевна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее, специалитет<br>
+                ФГБОУ ВО "Поволжский государственный технологический университет"<br>
+                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 230105 Программное
+                  обеспечение вычислительной техники и автоматизированных систем</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">10</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">0</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Веб-программирование</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 1200 0000455 от
+                18.02.2024 "Педагогика и психология преподавания в системе дополнительного образования", 16 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Lezhnina" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo" src="https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png"
+                alt="Lezhnina Marina"><br>
+              <p class="popup__person__fio" itemprop="fio">Лежнина Марина Владимировна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Доцент</p><br>
+              <span itemprop="degree">Кандидат экономических наук</span><br>
+              <span itemprop="academStat">Доцент</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский ордена Дружбы народов политехнический институт им. А. М. Горького<br>
+                <span itemprop="teachingQual">Квалификация: Инженер-механик</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Технология машиностроения,
+                  металлорежущие станки
+                  и инструменты</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">31</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">22</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Основы маркетинга;
+                Маркетинговые коммуникации; Экономика цифрового продукта</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 16677 от 25.04.2017 "Педагогические технологии
+                в системе высшего образования"<br>
+                Удостоверение о повышении квалификации № 122416299382 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Norkin" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3463-3938-4230-a533-343431383861/Norkin_Nikolay.jpg"
+                alt="Norkin Nikolay"><br>
+              <p class="popup__person__fio" itemprop="fio">Норкин Николай Анатольевич</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее, <br>
+                ФГБОУ ВО "Поволжский государственный технологический университет"<br>
+                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Программная инженерия</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">8</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">3</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Интерактивный дизайн</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                отсутвуют</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Hodykina" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6539-6563-4235-b232-386466323435/Ekaterina_Hodykina.jpg"
+                alt="Hodykina Ekarerina"><br>
+              <p class="popup__person__fio" itemprop="fio">Ходыкина Екатерина Сергеевна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее, бакалавриат<br>
+                ФГБОУ ВО "Марийский государственный университет"<br>
+                <span itemprop="teachingQual">Квалификация: Бакалавр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 45.03.01
+                  Филология</span><br><br>
+                <span itemprop="teachingLevel">
+                  Высшее, магистратура<br>
+                  ФГБОУ ВО "Марийский государственный университет"</span><br>
+                <span itemprop="teachingQual">Квалификация: Магистр</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: 45.04.01 Филология</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">4</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">1
+                    месяц</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Копирайтинг</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика (Направленность (профиль) Маркетинг цифрового
+                продукта)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 160300030411 от 30.05.2022 "Внедрение цифровых
+                технологий в образовательные программы", 144 часа<br>
+                Удостоверение о повышении квалификации № 122416299391 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li>09.03.03 Прикладная информатика<br>Направленность (профиль): Цифровые компетенции в образовании</li>
+  </ul>
+  <div class="people">
+    <div class="person">
+      <a href="#Pakhmutova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3137-6338-4031-a466-373562303466/Natalia_Pahmutova.jpg"
+          alt="Pakhmutova Natalia">
+      </a>
+      <a href="#Pakhmutova">
+        <p class="person__fio">Пахмутова Наталья Николаевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">И.о. зав. кафедрой</p>
+        <a href="#Pakhmutova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Ginzburg">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3765-6435-4232-b838-343165303437/Ginzburg_Elena.jpg"
+          alt="Ginzburg Elena">
+      </a>
+      <a href="#Ginzburg">
+        <p class="person__fio">Гинзбург Елена Евгеньевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Ginzburg">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Zherebtsova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3463-3733-4162-b931-643537313364/Zherebtsova_Olga.jpg"
+          alt="Zherebtsova Olga">
+      </a>
+      <a href="#Zherebtsova">
+        <p class="person__fio">Жеребцова Ольга Вениаминовна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Zherebtsova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Kozlov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6538-3462-4735-b366-313266353337/Kozlov_Alexander.png"
+          alt="Kozlov Alexander">
+      </a>
+      <a href="#Kozlov">
+        <p class="person__fio">Козлов Александр Иванович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Kozlov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Kuznetsova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6237-3764-4135-a465-653935323965/Kuznetsova_Natalya.png"
+          alt="Kuznetsova Natalia">
+      </a>
+      <a href="#Kuznetsova">
+        <p class="person__fio">Кузнецова Наталья Александровна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Kuznetsova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Koroleva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6236-3138-4733-b030-653037616165/Koroleva_Anastasia.png"
+          alt="Koroleva Anastasia">
+      </a>
+      <a href="#Koroleva">
+        <p class="person__fio">Королева Анастасия Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Ассистент</p>
+        <a href="#Koroleva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Popov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6430-6161-4834-b661-313732313035/Popov_Mikhail.png"
+          alt="Popov Mikhail">
+      </a>
+      <a href="#Popov">
+        <p class="person__fio">Попов Михаил Александрович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Popov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Vorobev">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3735-3831-4731-b864-363165353763/Vorobev_Dmitriy.png"
+          alt="Vorobev Dmitriy">
+      </a>
+      <a href="#Vorobev">
+        <p class="person__fio">Воробьев Дмитрий Николаевич</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Vorobev">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Vavilova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3333-6135-4939-b933-313764333532/Vavilova_Kseniya.png"
+          alt="Vavilova Kseniya">
+      </a>
+      <a href="#Vavilova">
+        <p class="person__fio">Вавилова Ксения Юрьевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Vavilova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Chemodanova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6630-3738-4435-a561-363438366339/Chemodanova_Maria.png"
+          alt="Chemodanova Maria">
+      </a>
+      <a href="#Chemodanova">
+        <p class="person__fio">Чемоданова Мария Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Chemodanova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Rozhentseva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3365-3430-4138-b134-386434633864/Rozhentsova.jpg"
+          alt="Rozhentseva Lubov">
+      </a>
+      <a href="#Rozhentseva">
+        <p class="person__fio">Роженцева Любовь Сергеевна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Rozhentseva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Serkin">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6135-3965-4034-b362-643934656131/Serkin_Pavel.jpg" alt="Serkin Pavel">
+      </a>
+      <a href="#Serkin">
+        <p class="person__fio">Серкин Павел Евгеньевич</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Преподаватель</p>
+        <a href="#Serkin">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Grebnev">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3531-6535-4330-a335-306665326535/Grebnev_Ivan.jpg" alt="Grebnev Ivan">
+      </a>
+      <a href="#Grebnev">
+        <p class="person__fio">Гребнев Иван Вячеславович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Grebnev">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Parsaeva">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild6437-6235-4566-b538-656230316231/Parsaeva_Irina.jpg"
+          alt="Parsaeva Irina">
+      </a>
+      <a href="#Parsaeva">
+        <p class="person__fio">Парсаева Ирина Вениаминовна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Доцент</p>
+        <a href="#Parsaeva">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Smoylov">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3739-6139-4631-b937-626334373061/Smoylov_Andrey.jpg"
+          alt="Smoylov Andrey">
+      </a>
+      <a href="#Smoylov">
+        <p class="person__fio">Смойлов Андрей Александрович</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Smoylov">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+
+    <div class="person">
+      <a href="#Rybakova">
+        <img class="person__photo"
+          src="https://static.tildacdn.com/tild3464-6663-4965-b738-386237366233/Rybakova_Elena.png"
+          alt="Rybakova Elena">
+      </a>
+      <a href="#Rybakova">
+        <p class="person__fio">Рыбакова Елена Владимировна</p>
+      </a>
+      <div class="person__extra">
+        <div class="line"></div>
+        <p class="person__post">Старший преподаватель</p>
+        <a href="#Rybakova">
+          <img class="person__link" src="https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg" alt="Link">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="Pakhmutova" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3137-6338-4031-a466-373562303466/Natalia_Pahmutova.jpg"
+                alt="Pakhmutova Natalia"><br>
+              <p class="popup__person__fio" itemprop="fio">Пахмутова Наталья Николаевна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">И.о. зав. кафедрой, доцент</p><br>
+              <span itemprop="degree">Кандидат педагогических наук</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный педагогический институт им. Н.К. Крупской<br>
+                <span itemprop="teachingQual">Квалификация: Учитель начальных классов, английского
+                  языка</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Педагогика и методика
+                  начального образования</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">26</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">26</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Общая педагогика и
+                психология; Основы вожатской деятельности; Учебная практика</p>
+              <p><span class="popup__person__focus">Тип практики:</span><br>исследовательская</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                "Диплом о профессиональной переподготовке № 524-1844799 от 10.01.2022 "Педагог
+                дополнительного образования", 25 часов<br>
+                Удостоверение о повышении квалификации № 180002581193 от 04.01.2021 "Методика
+                организации образовательного процесса в начальном общем образовании в соответствии с
+                ФГОС", 144 часа<br>
+                Удостоверение о повышении квалификации № 443-1844799 от 16.01.2021 "Организация
+                деятельности педагогических работников по классному руководству", 17 часов<br>
+                Удостоверение о повышении квалификации № 470-1844799 от 25.01.2021 "Методология и
+                технологии дистанционного обучения в образовательной организации", 49 часов<br>
+                Удостоверение о повышении квалификации № 353-X2JU058688 от 25.01.2012 "Коррекционная
+                педагогика и особенности образования и воспитания детей с ОВЗ", 73 часа<br>
+                Удостоверение о повышении квалификации № 180002809828 от 21.04.2021 "Христианская
+                психология как образ жизни", 118 часов<br>
+                Удостоверение о повышении квалификации № 519-1844799 от 04.08.2021 "Федеральный
+                государственный образовательный стандарт начального общего образования в
+                соответствии с
+                приказом Минпросвещения России №286 от 31 мая 2021 года", 44 часа<br>
+                Удостоверение о повышении квалификации № 0000072348 14807 от 02.11.2022
+                "Педагогические
+                компетенции учителя - предметника при переходе в 2022 году на обновленные ФГОС и
+                онлайн-сервисы Минпросвещения РФ", 144 часа<br>
+                Удостоверение о повышении квалификации № 0000072885 14807 от 07.12.2022
+                "Педагогические
+                компетенции руководителя образовательной организации при переходе в 2022 году на
+                обновленные ФГОС и онлайн-сервисы Минпросвещения РФ" , 144 часа<br>
+                Удостоверение о повышении квалификации № 122416299387 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Ginzburg" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild3765-6435-4232-b838-343165303437/Ginzburg_Elena.jpg"
+                alt="Ginzburg Elena"><br>
+              <p class="popup__person__fio" itemprop="fio">Гинзбург Елена Евгеньевна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший проеподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                Марийский государственный педагогический институт им. Н. К. Крупской<br>
+                <span itemprop="teachingQual">Квалификация: Учитель физики и информатики</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Физика и
+                  информатика</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">29</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">25</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Методика обучения
+                информатике в основом общем образовании; Методика обучения информатике в дополнительном образовании
+                школьников</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 120000000297 от 01.11.2020
+                "Философско-методологические и этические основы современного образования", 24
+                часа<br>
+                Удостоверение о повышении квалификации № 120000000337 от 06.11.2020 "Педагогический
+                дизайн: технологии создания электронного контента. Продвинутый уровень", 20
+                часов"<br>
+                Удостоверение о повышении квалификации № 122416299379 от 17.11.2023 "Организация
+                образовательного процесса для инвалидов и лиц с ограниченными возможностями здоровья
+                в образовательной организации высшего образования", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="Kuznetsova" class="popup">
+    <a href="##" class="popup__area"></a>
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="##" class="popup__close close-popup">×</a>
+        <table class="popup__person">
+          <tr class="td">
+            <td rowspan="2" class="td img">
+              <img class="popup__person__photo"
+                src="https://static.tildacdn.com/tild6237-3764-4135-a465-653935323965/Kuznetsova_Natalya.png"
+                alt="Kuznetsova Natalia"><br>
+              <p class="popup__person__fio" itemprop="fio">Кузнецова Наталья Александровна</p><br>
+              <div class="line"></div>
+              <p class="popup__person__post" itemprop="post">Старший преподаватель</p><br>
+              <span itemprop="degree">Ученая степень: нет</span><br>
+              <span itemprop="academStat">Ученое звание: нет</span>
+            </td>
+            <td class="td education">
+              <p itemprop="teachingLevel"><span class="popup__person__focus">Образование:</span><br>
+                Высшее,<br>
+                ФГБОУ ВО "Марийский государственный университет"<br>
+                <span itemprop="teachingQual">Квалификация: Инженер</span><br>
+                <span itemprop="employeeQualification">Направление подготовки: Биолог. Преподаватель биологии и химии.
+                  Учитель географии</span>
+              </p>
+              <p>
+                <span class="popup__person__focus">Стаж работы</span><br>
+                <span itemprop="genExperience">общий: <span class="popup__person__focus">24</span></span><br>
+                <span itemprop="specExperience">по специальности: <span class="popup__person__focus">24</span></span>
+              </p>
+            </td>
+            <td class="td">
+              <p itemprop="teachingDiscipline"><span class="popup__person__focus">Преподаваемые
+                  дисциплины:</span><br>Возрастная анатомия и
+                физиология; Основы медицинских знаний</p>
+              <p itemprop="teachingOp"><span class="popup__person__focus">Участие в реализации образовательных
+                  программ:</span><br>
+                09.03.03 Прикладная информатика(Направленность (профиль) Цифровые компетенции в
+                образовании)</p>
+            </td>
+          </tr>
+          <tr class="td">
+            <td class="td footer" colspan="2">
+              <br>
+              <p itemprop="profDevelopment"><span class="popup__person__focus">Сведения о повышении квалификации и о
+                  профессиональной
+                  переподготовке:</span><br>
+                Удостоверение о повышении квалификации № 120000000278 от 01.11.2020
+                "Философско-методологические и этические основы современного образования", 24
+                часа<br>
+                Удостоверение о повышении квалификации № 1809888 от 17.10.2021 "Эффективные
+                технологии развития, обучения и воспитания учащихся", 36 часов</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

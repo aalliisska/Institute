@@ -1,0 +1,307 @@
+<style>
+    * {
+        text-decoration: none;
+    }
+
+    :active,
+    :hover,
+    :focus {
+        outline: 0;
+        outline-offset: 0;
+    }
+
+    .info {
+        margin: 50px 20% 50px;
+        line-height: 18px;
+        font-size: 16px;
+        font-family: 'EuclidCircularB', Arial, sans-serif;
+        color: #2f3337;
+        font-weight: 400;
+    }
+
+    .title {
+        color: #ff8562;
+        font-size: 32px;
+        line-height: 34px;
+        font-weight: 700;
+    }
+
+    .title_focus {
+        color: #ff8562;
+    }
+
+    .subtitle {
+        line-height: 26px;
+        font-size: 24px;
+        font-weight: 400;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .link {
+        color: #2f3337;
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    li {
+        list-style: none;
+        background: url("https://static.tildacdn.com/tild3732-6661-4634-a365-363061666263/Polygon.svg") no-repeat;
+        padding-left: 45px;
+        font-weight: 400;
+        line-height: 20px;
+        font-size: 16px;
+    }
+
+    details {
+        border-bottom: 1px solid #2f3337;
+    }
+
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+
+    summary {
+        font-weight: bold;
+        margin: 10px;
+        padding-left: 40px;
+        list-style: none;
+        background: url("https://static.tildacdn.com/tild6438-6633-4630-b935-646530373234/arrow_orange.svg") no-repeat;
+        line-height: 22px;
+    }
+
+    details[open] {
+        padding: 10px;
+    }
+
+    details[open] summary {
+        margin-bottom: 10px;
+    }
+
+    .open-card {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .open-card__photo {
+        border-radius: 360px 360px 0 360px;
+        overflow-y: hidden;
+        min-width: 200px;
+    }
+
+    .open-card__info {
+        padding-left: 20px;
+        line-height: 18px;
+        font-size: 16px;
+    }
+
+    .open-card__info__fio {
+        color: #ff8562;
+        font-weight: 800;
+        line-height: 20px;
+        font-size: 18px;
+    }
+
+    .departments {
+        margin-top: 30px;
+    }
+
+    @media screen and (max-width: 950px) {
+        .info {
+            margin: 30px 5% 30px;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        .open-card {
+            flex-direction: column;
+            margin: 0;
+            margin-top: 30px;
+        }
+
+        details[open] summary {
+            margin-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .subtitle {
+            line-height: 20px;
+            font-size: 18px;
+        }
+    }
+</style>
+
+<div class="info">
+    <a class="link" href="https://ispring.institute/sveden/">
+        <img class="return" src="https://static.tildacdn.com/tild3331-3037-4537-b438-353839393732/return.svg" alt="return">
+    </a>
+    <h1 class="title">Структура и органы управления образовательной организацией</h1>
+    <h2 class="subtitle">Структура органов управления АНО ВО "РУМТ" включает в себя:</h2>
+
+    <ul>
+        <li>высший орган управления — Учредитель</li>
+    </ul>
+    <ul>
+        <li>единоличный исполнительный орган управления — Директор</li>
+    </ul>
+    <ul>
+        <li>коллегиальный орган управления — Учёный совет, <a href="https://ispri.ng/Mk3zr"
+                class="title_focus">Положение</a> об Учёном
+            совете</li>
+    </ul>
+    <ul>
+        <li>коллегиальный орган управления — Общее собрание работников и обучающихся, состоит из представителей
+            педагогических и научных работников, а также других работников и обучающихся Организации.
+            <a href="https://ispri.ng/Y0MZl" class="title_focus">Положение</a>
+        </li>
+    </ul>
+
+    <div class="departments">
+        <details>
+            <summary itemprop="name">Административный отдел</summary>
+            <div class="open-card">
+                <img class="open-card__photo"
+                    src="https://static.tildacdn.com/tild3463-3733-4162-b931-643537313364/Zherebtsova_Olga.jpg"
+                    alt="Zherebtsova Olga">
+                <div class="open-card__info" itemprop="structOrgUprav">
+                    <p class="open-card__info__fio" itemprop="fio">Жеребцова Ольга Вениаминовна</p>
+                    <p><span itemprop="post">Руководитель административного отдела</span><br>
+                        <span itemprop="addressStr">424033, Республика Марий Эл, г.Йошкар-Ола, ул.Эшкинина,
+                            д.8б</span><br>
+                        <span itemprop="site">Официальный сайт отсутствует</span><br>
+                        <a class="link" href="mailto:olga.zherebtsova@ispring.com"
+                            itemprop="email">olga.zherebtsova@ispring.com</a><br>
+                        <a href="https://ispri.ng/nBJqg" target="_blank" rel="noreferrer noopener" class="title_focus"
+                            itemprop="divisionClauseDocLink">Положение </a>об административном отделе
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary itemprop="name">Кафедра программных систем</summary>
+            <div class="open-card">
+                <img class="open-card__photo"
+                    src="https://static.tildacdn.com/tild3734-3864-4737-b463-356365633535/Arnaberdiev_Kerim.png"
+                    alt="Arnaberdiev Kerim">
+                <div class="open-card__info" itemprop="structOrgUprav">
+                    <p class="open-card__info__fio" itemprop="fio">Арнабердиев Авдыкерим</p>
+                    <p><span itemprop="post">И.о. заведующего кафедрой</span><br>
+                        <span itemprop="addressStr">424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д.
+                            8б</span><br>
+                        <span itemprop="site">Официальный сайт отсутствует</span><br>
+                        <a class="link" href="mailto:kerim.arnaberdiev@ispring.com"
+                            itemprop="email">kerim.arnaberdiev@ispring.com</a><br>
+                        <a href="https://ispri.ng/Dk61M" target="_blank" rel="noreferrer noopener" class="title_focus"
+                            itemprop="divisionClauseDocLink">Положение </a>о кафедре программных систем
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary itemprop="name">Кафедра маркетинговых коммуникаций</summary>
+            <div class="open-card">
+                <a href="https://job.ispring.institute/other-vacancies/125-0">
+                    <img class="open-card__photo" src="https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png"
+                        alt="vacancy">
+                </a>
+                <div class="open-card__info" itemprop="structOrgUprav">
+                    <a href="https://job.ispring.institute/other-vacancies/125-0" class="open-card__info__fio"
+                        itemprop="fio">Вакансия</a>
+                    <p><span itemprop="post">Заведующий кафедрой</span><br>
+                        <span itemprop="addressStr">424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д.
+                            8б</span><br>
+                        <span itemprop="site">Официальный сайт отсутствует</span><br>
+                        <a class="link" href="mailto:institute@ispring.ru" itemprop="email">institute@ispring.ru</a><br>
+                        <a href="https://ispri.ng/mrzqz" target="_blank" rel="noreferrer noopener" class="title_focus"
+                            itemprop="divisionClauseDocLink">Положение </a>о кафедре маркетинговых коммуникаций
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary itemprop="name">Центр академического образования</summary>
+            <div class="open-card">
+                <img class="open-card__photo" src="https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png"
+                    alt="vacancy">
+                <div class="open-card__info" itemprop="structOrgUprav">
+                    <p class="open-card__info__fio" itemprop="fio">Вакансия</p>
+                    <p><span itemprop="post">Руководитель центра академического образования</span><br>
+                        <span itemprop="addressStr">424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д.
+                            8б</span><br>
+                        <span itemprop="site">Официальный сайт отсутствует</span><br>
+                        <a class="link" href="mailto:institute@ispring.ru" itemprop="email">institute@ispring.ru</a><br>
+                        <a href="https://ispri.ng/mrzqz" target="_blank" rel="noreferrer noopener" class="title_focus"
+                            itemprop="divisionClauseDocLink">Положение </a>о центре академического образования
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary itemprop="name">Центр физической культуры</summary>
+            <div class="open-card">
+                <img class="open-card__photo" src="https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png"
+                    alt="vacancy">
+                <div class="open-card__info" itemprop="structOrgUprav">
+                    <p class="open-card__info__fio" itemprop="fio">Вакансия</p>
+                    <p><span itemprop="post">Руководитель центра физической культуры</span><br>
+                        <span itemprop="addressStr">424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д.
+                            8б</span><br>
+                        <span itemprop="site">Официальный сайт отсутствует</span><br>
+                        <a class="link" href="mailto:institute@ispring.ru" itemprop="email">institute@ispring.ru</a><br>
+                        <a href="https://ispri.ng/Y08vy" target="_blank" rel="noreferrer noopener" class="title_focus"
+                            itemprop="divisionClauseDocLink">Положение </a>о центре физической культуры
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary itemprop="name">Центр дополнительного образования</summary>
+            <div class="open-card">
+                <img class="open-card__photo" src="https://static.tildacdn.com/tild3536-3363-4461-a638-653838653238/noperson-white.png"
+                    alt="vacancy">
+                <div class="open-card__info" itemprop="structOrgUprav">
+                    <p class="open-card__info__fio" itemprop="fio">Вакансия</p>
+                    <p><span itemprop="post">Руководитель центра дополнительного образования</span><br>
+                        <span itemprop="addressStr">424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д.
+                            8б</span><br>
+                        <span itemprop="site">Официальный сайт отсутствует</span><br>
+                        <a class="link" href="mailto:institute@ispring.ru" itemprop="email">institute@ispring.ru</a><br>
+                        <a href="https://ispri.ng/xK9qV" target="_blank" rel="noreferrer noopener" class="title_focus"
+                            itemprop="divisionClauseDocLink">Положение </a>о центре дополнительного образования
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary itemprop="name">Кафедра информатики в образовании</summary>
+            <div class="open-card">
+                <img class="open-card__photo"
+                    src="https://static.tildacdn.com/tild3137-6338-4031-a466-373562303466/Natalia_Pahmutova.jpg"
+                    alt="Pakhmutova Natalia">
+                <div class="open-card__info" itemprop="structOrgUprav">
+                    <p class="open-card__info__fio" itemprop="fio">Пахмутова Наталья Николаевна</p>
+                    <p><span itemprop="post">И.о. заведующего кафедрой</span><br>
+                        <span itemprop="addressStr">424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д.
+                            8б</span><br>
+                        <span itemprop="site">Официальный сайт отсутствует</span><br>
+                        <a class="link" href="mailto:natalia.pahmutova@ispring.com"
+                            itemprop="email">natalia.pahmutova@ispring.com</a><br>
+                        <a href="https://ispri.ng/nBR8D" target="_blank" rel="noreferrer noopener" class="title_focus"
+                            itemprop="divisionClauseDocLink">Положение </a>о кафедре информатики в образовании
+                    </p>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>

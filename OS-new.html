@@ -1,0 +1,299 @@
+<style>
+    * {
+        text-decoration: none;
+    }
+
+    :active,
+    :hover,
+    :focus {
+        outline: 0;
+        outline-offset: 0;
+    }
+
+    .info {
+        margin: 50px 20% 50px;
+        line-height: 18px;
+        font-size: 16px;
+        font-family: 'EuclidCircularB', Arial, sans-serif;
+        color: #2f3337;
+        font-weight: 400;
+    }
+
+    .title {
+        color: #ff8562;
+        font-size: 32px;
+        line-height: 34px;
+        font-weight: 700;
+        overflow-y: hidden;
+    }
+
+    .title_focus {
+        color: #ff8562;
+    }
+
+    .subtitle {
+        line-height: 26px;
+        font-size: 24px;
+        font-weight: 400;
+        overflow: hidden;
+    }
+
+    .documents {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    ul {
+        padding-left: 0;
+        flex: 1 1 48%;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        min-height: 70px;
+    }
+
+    li {
+        list-style: none;
+        background: url("https://static.tildacdn.com/tild3030-6339-4366-a165-356264613266/doc.svg") no-repeat;
+        padding-left: 70px;
+        font-weight: 400;
+        line-height: 18px;
+        font-size: 16px;
+        overflow-y: hidden;
+    }
+
+    .link {
+        color: #ff8562;
+        text-decoration: none;
+    }
+
+    .table {
+        border: 1px solid #ff8562;
+        border-collapse: collapse;
+
+    }
+
+    .td {
+        border: 1px solid #ff8562;
+        padding: 10px;
+    }
+
+    .th {
+        border: 1px solid #ff8562;
+        background-color: #ff846233;
+    }
+
+    .table2 {
+        border-collapse: collapse;
+    }
+
+    .td2 {
+        border-bottom: 1px solid #474646;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 750px) {
+        .info {
+            margin: 30px 5% 30px;
+        }
+    }
+
+    @media screen and (max-width: 570px) {
+        .subtitle {
+            line-height: 20px;
+            font-size: 18px;
+        }
+
+        .info {
+            line-height: 16px;
+            font-size: 14px;
+        }
+
+        li {
+            line-height: 16px;
+            font-size: 14px;
+        }
+    }
+</style>
+
+<div class="info">
+    <a class="link" href="https://ispring.institute/sveden/">
+        <img class="return" src="https://static.tildacdn.com/tild3331-3037-4537-b438-353839393732/return.svg" alt="return">
+    </a>
+    <h1 class="title">Основные сведения</h1>
+    <table class="table2">
+        <tr>
+            <td class="td2" width="45%">Полное наименование организации:</td>
+            <td class="td2" itemprop="fullName">Автономная некоммерческая организация высшего образования "Русский
+                университет
+                метатехнологий"</td>
+        </tr>
+        <tr>
+            <td class="td2"> Сокращенное наименование: </td>
+            <td class="td2" itemprop="shortName">АНО ВО "РУМТ"</td>
+        </tr>
+        <tr>
+            <td class="td2">До изменения вида деятельности с дополнительного профессионального образования на высшее
+                образование
+                организация
+                именовалась:</td>
+            <td class="td2">Автономная некоммерческая организация дополнительного профессионального образования
+                "Инфосфера",
+                АНО ДПО "Инфосфера"</td>
+        </tr>
+        <tr>
+            <td class="td2">Дата создания:</td>
+            <td class="td2" itemprop="regDate">17 декабря 2009 г.</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес местонахождения:</td>
+            <td class="td2" itemprop="address">424033, Республика Марий Эл, г.
+                Йошкар-Ола, ул.
+                Эшкинина, д. 8 б</td>
+        </tr>
+        <tr>
+            <td class="td2">Режим, график работы</td>
+            <td class="td2" itemprop="workTime">ПН-ПТ с 9:00 до 18:00, обед с 12:00 до 13:00</td>
+        </tr>
+        <tr>
+            <td class="td2">Контактные телефоны</td>
+            <td class="td2" itemprop="telephone">+7 (8362) 60 00 10, +7 939 720 00 10</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес электронной почты</td>
+            <td class="td2" itemprop="email">institute@ispring.ru</td>
+        </tr>
+    </table>
+    <br>
+    <div class="documents">
+        <ul>
+            <li itemprop="licenseDocLink"><span><a class="link" href="https://ispri.ng/W3GQR">Лицензия</a> на
+                    осуществление образовательной деятельности, <a class="link"
+                        href="https://ispri.ng/MkDQD">документ</a> с подписью</span></li>
+        </ul>
+        <ul>
+            <li itemprop="accreditationDocLink"><span><a class="link"
+                        href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-7xiL0-XTR0P-NRBkJ">
+                        Свидетельство</a> о государственной аккредитации, <a class="link"
+                        href="https://rumt.ispringcloud.ru/acc/BrlJbdMxNTkyNQ/s/15925-nSw2r-pG9gC-ThAak">документ</a>
+                    с подписью</span></li>
+        </ul>
+    </div>
+
+    <h2 class="subtitle">Сведения об учредителях</h2>
+    <table class="table2" itemprop="uchredLaw">
+        <tr>
+            <td class="td2">Наименование учредителя</td>
+            <td class="td2" itemprop="nameUchred">Усков Юрий Викторович (физическое лицо)</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес местонахождения</td>
+            <td class="td2" itemprop="addressUchred">Республика Марий Эл, г. Йошкар-Ола, ул. Вознесенская, д.110
+            </td>
+        </tr>
+        <tr>
+            <td class="td2">Контактные телефоны</td>
+            <td class="td2" itemprop="telUchred">+7 (8362) 60 00 10</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес электронной почты</td>
+            <td class="td2" itemprop="mailUchred">yury.uskov@ispring.com</td>
+        </tr>
+        <tr>
+            <td class="td2">Адрес сайта</td>
+            <td class="td2" itemprop="websiteUchred">Отсутствует</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <h2 class="subtitle">Места осуществления образовательной деятельности</h2>
+    <table class="table">
+        <tr>
+            <th class="th">№ п/п</th>
+            <th class="th">Места осуществления образовательной деятельности</th>
+            <th class="th">Адрес места осуществления образовательной деятельности</th>
+        </tr>
+        <tr>
+            <td class="td" align="center">1</td>
+            <td class="td">Места осуществления образовательной
+                деятельности, которые включаются в
+                соответствующую запись в реестре лицензий на
+                осуществление образовательной деятельности
+            </td>
+            <td class="td" itemprop="addressPlace">
+                • 424006, Республика Марий Эл, г. Йошкар-Ола, ул. Вознесенская, д. 110,
+                пом. IV;<br>
+                • 424033, Республика Марий Эл, городской округ "Город Йошкар-Ола", город
+                Йошкар-Ола,
+                улица Эшкинина, дом 8а;<br>
+                • 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8 б
+            </td>
+        </tr>
+        <tr>
+            <td class="td" align="center">2</td>
+            <td class="td">Места осуществления образовательной
+                деятельности при использовании сетевой формы
+                реализации образовательных программ</td>
+            <td class="td" itemprop="addressPlaceSet">Отсутствует</td>
+        </tr>
+        <tr>
+            <td class="td" align="center">3</td>
+            <td class="td">Места проведения практики</td>
+            <td class="td" itemprop="addressPlacePrac">424006, Республика Марий Эл, г. Йошкар-Ола, ул. Вознесенская,
+                д.
+                110, ООО
+                "Ричмедиа"</td>
+        </tr>
+        <tr>
+            <td class="td" align="center">4</td>
+            <td class="td">Места проведения практической подготовки обучающихся</td>
+            <td class="td" itemprop="addressPlacePodg">
+                • 424006, Республика Марий Эл, г. Йошкар-Ола, ул. Вознесенская,
+                д.
+                110, ООО "Ричмедиа";<br>
+                • 424033, Республика Марий Эл, городской округ "Город
+                Йошкар-Ола",
+                город
+                Йошкар-Ола,
+                улица Эшкинина, дом 8а, Лицей "Инфотех";<br>
+                • 424033, Республика Марий Эл, городской округ "Город
+                Йошкар-Ола",
+                город
+                Йошкар-Ола,
+                улица Эшкинина, дом 8а, АНО ВО "РУМТ";<br>
+                • 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8 б, АНО ВО "РУМТ"
+            </td>
+        </tr>
+        <tr>
+            <td class="td" align="center">5</td>
+            <td class="td">Места проведения государственной итоговой аттестации</td>
+            <td class="td" itemprop="addressPlaceGia">
+                • 424033, Республика Марий Эл, городской округ "Город
+                Йошкар-Ола",
+                город
+                Йошкар-Ола,
+                улица Эшкинина, дом 8а;<br>
+                • 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8 б
+            </td>
+        </tr>
+        <tr>
+            <td class="td" align="center">6</td>
+            <td class="td">Места осуществления образовательной
+                деятельности по дополнительным образовательным
+                программам</td>
+            <td class="td" itemprop="addressPlaceDop">
+                • 424033, Республика Марий Эл, городской округ "Город Йошкар-Ола", город Йошкар-Ола, улица Эшкинина,
+                дом
+                8а;<br>
+                • 424033, Республика Марий Эл, г. Йошкар-Ола, ул. Эшкинина, д. 8 б
+            </td>
+        </tr>
+        <tr>
+            <td class="td" align="center">7</td>
+            <td class="td">Места осуществления образовательной
+                деятельности по основным программам
+                профессионального обучения</td>
+            <td class="td" itemprop="addressPlaceOppo">Отсутствует</td>
+        </tr>
+    </table>
+</div>

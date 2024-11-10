@@ -1,0 +1,793 @@
+<style>
+    * {
+        text-decoration: none;
+    }
+
+    :active,
+    :hover,
+    :focus {
+        outline: 0;
+        outline-offset: 0;
+    }
+
+    .info {
+        margin: 50px 20% 50px;
+        line-height: 18px;
+        font-size: 16px;
+        font-family: 'EuclidCircularB', Arial, sans-serif;
+        color: #2f3337;
+        font-weight: 400;
+    }
+
+    .title {
+        color: #ff8562;
+        font-size: 32px;
+        line-height: 34px;
+        font-weight: 700;
+    }
+
+    .title_focus {
+        color: #ff8562;
+    }
+
+    .subtitle {
+        line-height: 26px;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .table-block {
+        overflow-x: auto;
+    }
+
+    .table-link {
+        color: #ff8562;
+    }
+
+    .table {
+        border: 1px solid #ff8562;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td {
+        border: 1px solid #ff8562;
+        padding: 10px;
+    }
+
+    th {
+        border: 1px solid #ff8562;
+        background-color: #ff846233;
+        padding: 10px;
+    }
+
+    .link {
+        color: #2f3337;
+    }
+
+    ul {
+        padding-left: 0;
+        flex: 1 1 48%;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        min-height: 70px;
+    }
+
+    li {
+        list-style: none;
+        background: url("https://static.tildacdn.com/tild3030-6339-4366-a165-356264613266/doc.svg") no-repeat;
+        padding-left: 70px;
+        font-weight: 400;
+        line-height: 18px;
+        font-size: 16px;
+    }
+
+    .full {
+        width: 50%;
+    }
+
+    @media screen and (max-width: 950px) {
+        .info {
+            margin: 30px 5% 30px;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        .subtitle {
+            line-height: 20px;
+            font-size: 18px;
+        }
+    }
+</style>
+
+<div class="info">
+    <a class="link" href="https://ispring.institute/sveden/">
+        <img class="return" src="https://static.tildacdn.com/tild3331-3037-4537-b438-353839393732/return.svg" alt="return">
+    </a>
+    <h1 class="title">Образование</h1>
+    <h2 class="subtitle">Информация о сроке действия государственной аккредитации образовательной
+        программы на которых осуществляется образование(обучение)</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Код, шифр</th>
+                <th>Наименование профессии, специальности, направления подготовки, научной
+                    специальности</th>
+                <th>Образовательная программа, направленность, профиль, шифр и наименование
+                    научной специальности
+                </th>
+                <th>Уровень образования</th>
+                <th>Формы обучения</th>
+                <th>Нормативный срок обучения</th>
+                <th>Срок действия государственной аккредитации (дата окончания действия
+                    свидетельства о
+                    государственной
+                    аккредитации)</th>
+                <th>Учебные предметы, курсы, дисциплины (модули), предусмотренные
+                    соответствующей образовательной
+                    программой
+                </th>
+                <th>Практики, предусмотренные соответствующей образовательной программой</th>
+                <th>Информация об использовании при реализации образовательных программ
+                    электронного обучения и
+                    дистанционных образовательных технологий</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr align="center" itemprop="eduAccred">
+                <td itemprop="eduCode">09.03.03</td>
+                <td itemprop="eduName">Прикладная информатика</td>
+                <td itemprop="eduProf">Маркетинг цифрового продукта</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="learningTerm">4 года</td>
+                <td itemprop="dateEnd">Отсутствует</td>
+                <td>Дисциплины:
+                    <a class="table-link" href="https://ispri.ng/gBzq3" target="_blank" rel="noreferrer noopener"
+                        itemprop="eduPred">приём 2022</a><br>
+                    <a class="table-link" href="https://ispri.ng/NkRNM" target="_blank" rel="noreferrer noopener"
+                        itemprop="eduPred">приём 2023</a>
+                </td>
+                <td><a class="table-link" href="https://ispri.ng/qB32g" target="_blank" rel="noreferrer noopener"
+                        itemprop="eduPrac">
+                        Практики</a></td>
+                <td itemprop="eduEl">Частично используется</td>
+            </tr>
+            <tr align="center" itemprop="eduAccred">
+                <td itemprop="eduCode">09.03.03</td>
+                <td itemprop="eduName">Прикладная информатика</td>
+                <td itemprop="eduProf">Цифровые компетенции в образовании</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="learningTerm">4 года</td>
+                <td itemprop="dateEnd">Отсутствует</td>
+                <td><a class="table-link" href="https://ispri.ng/pB5Vg" target="_blank" rel="noreferrer noopener"
+                        itemprop="eduPred">
+                        Дисциплины</a></td>
+                <td><a class="table-link" href="https://ispri.ng/50qyK" target="_blank" rel="noreferrer noopener"
+                        itemprop="eduPrac">
+                        Практики</a></td>
+                <td itemprop="eduEl">Частично используется</td>
+            </tr>
+            <tr align="center" itemprop="eduAccred">
+                <td itemprop="eduCode">09.03.04</td>
+                <td itemprop="eduName">Программная инженерия</td>
+                <td itemprop="eduProf">Проектирование и разработка программных систем</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="learningTerm">4 года</td>
+                <td itemprop="dateEnd">Отсутствует</td>
+                <td><a class="table-link" href="https://ispri.ng/BlLv0" target="_blank" rel="noreferrer noopener"
+                        itemprop="eduPred">Дисциплины</a></td>
+                <td><a class="table-link" href="https://ispri.ng/yMl16" target="_blank" rel="noreferrer noopener"
+                        itemprop="eduPrac">Практики</a></td>
+                <td itemprop="eduEl">Частично используется</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <ul>
+        <li><a class="link" href="https://ispri.ng/nBrVL" itemprop="languageEl"><span class="title_focus">Информация
+                </span>
+                о языках, на которых осуществляется образование</a></li>
+    </ul>
+    <br>
+    <br>
+    <h2 class="subtitle">Информация о профессионально-общественной аккредитации образовательной
+        программы</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Код специальности, направления подготовки</th>
+                <th>Наименование специальности, направления подготовки,
+                    научной специальности</th>
+                <th>Уровень образования</th>
+                <th>Образовательная программа, направленность, профиль,
+                    шифр и наименование научной специальности</th>
+                <th>Наименование аккредитующей организации</th>
+                <th>Срок действия профессионально-общественной аккредитации</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr align="center" itemprop="eduPOAccred">
+                <td itemprop="eduCode">Отсутствует</td>
+                <td itemprop="eduName">Отсутствует</td>
+                <td itemprop="eduLevel">Отсутствует</td>
+                <td itemprop="eduProf">Отсутствует</td>
+                <td itemprop="orgName">Отсутствует</td>
+                <td itemprop="dateEnd">Отсутствует</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+
+    <h2 class="subtitle">Информация об общественной аккредитации</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Код специальности, направления подготовки</th>
+                <th>Наименование специальности, направления подготовки,
+                    научной специальности</th>
+                <th>Уровень образования</th>
+                <th>Образовательная программа, направленность, профиль,
+                    шифр и наименование научной специальности</th>
+                <th>Наименование аккредитующей организации</th>
+                <th>Срок действия профессионально-общественной аккредитации</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr align="center" itemprop="eduOAccred">
+                <td itemprop="eduCode">Отсутствует</td>
+                <td itemprop="eduName">Отсутствует</td>
+                <td itemprop="eduLevel">Отсутствует</td>
+                <td itemprop="eduProf">Отсутствует</td>
+                <td itemprop="orgName">Отсутствует</td>
+                <td itemprop="dateEnd">Отсутствует</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h2 class="subtitle">Информация о численности обучающихся</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th rowspan="3">Код, шифр</th>
+                <th rowspan="3">Наименование профессии, специальности, направления подготовки,
+                    наименование
+                    группы научных
+                    специальностей</th>
+                <th rowspan="3">Уровень образования</th>
+                <th rowspan="3">Формы обучения</th>
+                <th colspan="8">Сведения о численности обучающихся за счёт</th>
+                <th rowspan="3">Общая численность обучающихся</th>
+            </tr>
+            <tr align="center">
+                <th colspan="2">бюджетных ассигнований федерального бюджета</th>
+                <th colspan="2">бюджетов субъектов Российской Федерации</th>
+                <th colspan="2">местных бюджетов</th>
+                <th colspan="2">средств физических и (или) юридических лиц</th>
+            </tr>
+            <tr align="center">
+                <th>Всего</th>
+                <th>Из них численность обучающихся, являющихся иностранными гражданами</th>
+                <th>Всего</th>
+                <th>Из них численность обучающихся, являющихся иностранными гражданами</th>
+                <th>Всего</th>
+                <th>Из них численность обучающихся, являющихся иностранными гражданами</th>
+                <th>Всего</th>
+                <th>Из них численность обучающихся, являющихся иностранными гражданами</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr align="center" itemprop="eduChislen">
+                <td itemprop="eduCode">09.03.03</td>
+                <td itemprop="eduName">Прикладная информатика</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="numberBF">-</td>
+                <td itemprop="numberBFF">-</td>
+                <td itemprop="numberBR">-</td>
+                <td itemprop="numberBRF">-</td>
+                <td itemprop="numberBM">-</td>
+                <td itemprop="numberBMF">-</td>
+                <td itemprop="numberP">19</td>
+                <td itemprop="numberPF">-</td>
+                <td itemprop="numberAll">19</td>
+            </tr>
+            <tr align="center" itemprop="eduChislen">
+                <td itemprop="eduCode">09.03.04</td>
+                <td itemprop="eduName">Программная инженерия</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="numberBF">-</td>
+                <td itemprop="numberBFF">-</td>
+                <td itemprop="numberBR">-</td>
+                <td itemprop="numberBRF">-</td>
+                <td itemprop="numberBM">-</td>
+                <td itemprop="numberBMF">-</td>
+                <td itemprop="numberP">35</td>
+                <td itemprop="numberPF">-</td>
+                <td itemprop="numberAll">35</td>
+
+            </tr>
+        </table>
+    </div>
+    <br>
+    <ul>
+        <li><a class="link" href="https://ispri.ng/93ZVW" itemprop="eduChislenEl"><span class="title_focus">Информация
+                </span>
+                о численности обучающихся</a></li>
+    </ul>
+    <br>
+    <h2 class="subtitle">Информация о результатах приёма</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr align="center">
+                <th rowspan="2">Код, шифр</th>
+                <th rowspan="2">Наименование профессии, специальности, направления подготовки,
+                    наименование
+                    группы научных
+                    специальностей</th>
+                <th rowspan="2">Уровень образования</th>
+                <th rowspan="2">Формы обучения</th>
+                <th colspan="4">Сведения о численности обучающихся</th>
+                <th rowspan="2">Средняя сумма набранных баллов по всем вступительным испытаниям</th>
+            </tr>
+            <tr>
+                <th>за счёт бюджетных ассигнований федерального бюджета</th>
+                <th>за счёт бюджетов субъектов Российской Федерации</th>
+                <th>за счёт местных бюджетов</th>
+                <th>за счёт средств физических и (или) юридических лиц</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr align="center" itemprop="eduPriem">
+                <td itemprop="eduCode">09.03.03</td>
+                <td itemprop="eduName">Прикладная информатика</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="numberBF">-</td>
+                <td itemprop="numberBR">-</td>
+                <td itemprop="numberBM">-</td>
+                <td itemprop="numberP">21</td>
+                <td itemprop="score">73,92</td>
+            </tr>
+            <tr align="center" itemprop="eduPriem">
+                <td itemprop="eduCode">09.03.04</td>
+                <td itemprop="eduName">Программная инженерия</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="numberBF">-</td>
+                <td itemprop="numberBR">-</td>
+                <td itemprop="numberBM">-</td>
+                <td itemprop="numberP">18</td>
+                <td itemprop="score">75,78</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <ul>
+        <li><a class="link" href="https://ispri.ng/7lMX8" itemprop="eduPriemEl"><span class="title_focus">Информация
+                </span>
+                о результатах приёма</a></li>
+    </ul>
+    <br>
+    <h2 class="subtitle">Информация о результатах перевода, восстановления и отчисления</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th rowspan="2">Код, шифр</th>
+                <th rowspan="2">Наименование профессии, специальности, направления подготовки,
+                    наименование
+                    группы научных
+                    специальностей</th>
+                <th rowspan="2">Уровень образования</th>
+                <th rowspan="2">Формы обучения</th>
+                <th colspan="2">Численность обучающихся, переведенных</th>
+                <th rowspan="2">Численность восстановленных обучающихся</th>
+                <th rowspan="2">Численность отчисленных обучающихся</th>
+            </tr>
+            <tr>
+                <th>в другие образовательные организации</th>
+                <th>из других образовательных организаций</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr align="center" itemprop="eduPerevod">
+                <td itemprop="eduCode">09.03.03</td>
+                <td itemprop="eduName">Прикладная информатика</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="numberOut">-</td>
+                <td itemprop="numberTo">-</td>
+                <td itemprop="numberRes">-</td>
+                <td itemprop="numberExp">8</td>
+            </tr>
+            <tr align="center" itemprop="eduPerevod">
+                <td itemprop="eduCode">09.03.04</td>
+                <td itemprop="eduName">Программная инженерия</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduForm">Очная</td>
+                <td itemprop="numberOut">-</td>
+                <td itemprop="numberTo">-</td>
+                <td itemprop="numberRes">-</td>
+                <td itemprop="numberExp">6</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <ul>
+        <li><a class="link" href="https://ispri.ng/93ZVW" itemprop="eduPerevodEl"><span class="title_focus">Информация
+                </span>
+                о результатах перевода, восстановления и отчисления</a></li>
+    </ul>
+    <br>
+    <h2 class="subtitle">Реализуемые образовательные программы</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Код, шифр</th>
+                <th>Наименование профессии, специальности, направления подготовки,
+                    наименование группы научных
+                    специальностей</th>
+                <th>Уровень образования</th>
+                <th>Образовательная программа, направленность, профиль, шифр и наименование
+                    научной специальности
+                </th>
+                <th>Реализуемые формы обучения</th>
+                <th>Ссылка на описание образовательной программы с приложением ее копии</th>
+                <th>Ссылка на учебный план</th>
+                <th>Ссылка на аннотации к рабочим программам дисциплин</th>
+                <th>Ссылки на рабочие программы</th>
+                <th>Ссылка на календарный учебный график</th>
+                <th>Ссылка на рабочие программы практик, предусмотренных соответствующей
+                    образовательной
+                    программой</th>
+                <th>Ссылка на методические и иные документы, разработанные ОО для
+                    обеспечения образовательного
+                    процесса, а
+                    также рабочие программы воспитания и календарные планы воспитательной работы, включаемых в ООП</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+            <tr align="center" itemprop="eduOp">
+                <td itemprop="eduCode">09.03.03</td>
+                <td itemprop="eduName">Прикладная информатика</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduProf">Маркетинг цифрового продукта</td>
+                <td itemprop="eduForm">Очная</td>
+                <td><a class="table-link" href="https://ispri.ng/Z76qK" target="_blank" rel="noreferrer noopener"
+                        itemprop="opMain">Образовательная программа</a>
+                </td>
+                <td>
+                    <p>Учебный план:</p><a class="table-link" href="https://ispri.ng/Mkq3Q" target="_blank"
+                        rel="noreferrer noopener" itemprop="educationPlan">приём 2022</a>
+                    <a class="table-link" href="https://ispri.ng/xKm8Y" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationPlan">приём 2023</a>
+                </td>
+                <td>
+                    <p class="text">Рабочие программы дисциплин:</p>
+                    <a class="table-link" href="https://ispring.institute/programm#programmmk22" target="_blank"
+                        rel="noreferrer noopener" itemprop="educationRpd">приём 2022</a>
+                    <a class="table-link" href="https://ispring.institute/programm#programmmk23" target="_blank"
+                        rel="noreferrer noopener" itemprop="educationRpd">приём 2023</a>
+                </td>
+                <td><a class="table-link" href="https://ispri.ng/7lz56" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationShedule">Календарный учебный график</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/pBZyW" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationShedule">Календарный график на 2023-2024 учебный год</a>
+                </td>
+                <td>
+                    <p class="text">Программы практик:</p>
+                    <a class="table-link" href="https://ispring.institute/programm#programmmk22" target="_blank"
+                        rel="noreferrer noopener" itemprop="eduPr">приём 2022</a>
+                    <a class="table-link" href="https://ispring.institute/programm#programmmk23" target="_blank"
+                        rel="noreferrer noopener" itemprop="eduPr">приём 2023</a>
+                </td>
+                <td><a class="table-link" href="https://ispri.ng/kB6Rn" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Методические рекомендации</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/nB39r" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Программа
+                        итоговой аттестации</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/DknY3" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Рабочая программа
+                        воспитания</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/67MKK" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Календарный план воспитательной работы</a>
+                </td>
+            </tr>
+            <tr align="center" itemprop="eduOp">
+                <td itemprop="eduCode">09.03.03</td>
+                <td itemprop="eduName">Прикладная информатика</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduProf">Цифровые компетенции в образовании</td>
+                <td itemprop="eduForm">Очная</td>
+                <td><a class="table-link" href="https://ispri.ng/nBZQr" target="_blank" rel="noreferrer noopener"
+                        itemprop="opMain">Образовательная программа</a>
+                </td>
+                <td>
+                    <p>Учебный план:</p>
+                    <a class="table-link" href="https://ispri.ng/mrM0g" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationPlan">приём 2023</a>
+                </td>
+                <td>
+                    <p class="text">Рабочие программы дисциплин:</p>
+                    <a class="table-link" href="https://ispring.institute/programm#programmio23" target="_blank"
+                        rel="noreferrer noopener" itemprop="educationRpd">приём 2023</a>
+                </td>
+                <td><a class="table-link" href="https://ispri.ng/8lp7k" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationShedule">Календарный учебный график</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/5065W" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationShedule">Календарный график на 2023-2024 учебный год</a>
+                </td>
+                <td>
+                    <p class="text">Программы практик:</p>
+                    <a class="table-link" href="https://ispring.institute/programm#programmio23" target="_blank"
+                        rel="noreferrer noopener" itemprop="eduPr">приём 2023</a>
+                </td>
+                <td><a class="table-link" href="https://ispri.ng/zZXNg" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Методические рекомендации</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/VZgJl" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Программа
+                        итоговой аттестации</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/DkpqG" rel="noreferrer noopener"
+                        itemprop="methodology">Рабочая
+                        программа
+                        воспитания</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/67MKK" rel="noreferrer noopener"
+                        itemprop="methodology">Календарный план
+                        воспитательной работы</a>
+                </td>
+            </tr>
+            <tr align="center" itemprop="eduOp">
+                <td itemprop="eduCode">09.03.04</td>
+                <td itemprop="eduName">Программная инженерия</td>
+                <td itemprop="eduLevel">Высшее образование - бакалавриат</td>
+                <td itemprop="eduProf">Проектирование и разработка программных систем</td>
+                <td itemprop="eduForm">Очная</td>
+                </td>
+                <td><a class="table-link" href="https://ispri.ng/mr39g" target="_blank" rel="noreferrer noopener"
+                        itemprop="opMain">Образовательная программа</a>
+                </td>
+                <td>
+                    <p>Учебный план:</p><a class="table-link" href="https://ispri.ng/Gk9N9" target="_blank"
+                        rel="noreferrer noopener" itemprop="educationPlan">приём 2022</a>
+                    <a class="table-link" href="https://ispri.ng/8lJDk" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationPlan">приём 2023</a>
+                </td>
+                <td>
+                    <p class="text">Аннотации:</p>
+                    <a class="table-link" href="https://ispri.ng/rgLv0" target="_blank" rel="noreferrer noopener">приём
+                        2022</a>
+                    <a class="table-link" href="https://ispri.ng/1MDGg" target="_blank" rel="noreferrer noopener">приём
+                        2023</a>
+                </td>
+                <td>
+                    <p class="text">Рабочие программы дисциплин:</p>
+                    <a class="table-link" href="https://ispring.institute/programm#programmps22" target="_blank"
+                        rel="noreferrer noopener" itemprop="educationRpd">приём 2022</a>
+                    <a class="table-link" href="https://ispring.institute/programm#programmps23" target="_blank"
+                        rel="noreferrer noopener" itemprop="educationRpd">приём 2023</a>
+                </td>
+                <td><a class="table-link" href="https://ispri.ng/pB3D6" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationShedule">Календарный учебный график</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/lBGJz" target="_blank" rel="noreferrer noopener"
+                        itemprop="educationShedule">Календарный график на 2023-2024 учебный год</a>
+                </td>
+                <td>
+                    <p class="text">Программы практик:</p>
+                    <a class="table-link" href="https://ispring.institute/programm#programmps22" target="_blank"
+                        rel="noreferrer noopener" itemprop="eduPr">приём 2022</a>
+                    <a class="table-link" href="https://ispring.institute/programm#programmps23" target="_blank"
+                        rel="noreferrer noopener" itemprop="eduPr">приём 2023</a>
+                </td>
+                <td><a class="table-link" href="https://ispri.ng/xK2gX" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Методические рекомендации</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/yM8Y5" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Программа
+                        итоговой аттестации</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/lB3Y6" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Рабочая программа
+                        воспитания</a><br><br>
+                    <a class="table-link" href="https://ispri.ng/67MKK" target="_blank" rel="noreferrer noopener"
+                        itemprop="methodology">Календарный план воспитательной работы</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <br>
+    <h2 class="subtitle">Информация по адаптированным образовательным программам</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Код специальности, направления</th>
+                <th>Наименование специальности, направления подготовки</th>
+                <th>Уровень образования</th>
+                <th>Образовательная программа, направленность, профиль, шифр и наименование
+                    научной специальности</th>
+                <th>Реализуемые формы обучения</th>
+                <th>Ссылка на описание образовательной программы с приложением её копии</th>
+                <th>Ссылка на учебный план</th>
+                <th>Ссылки на рабочие программы</th>
+                <th>Ссылка на календарный учебный график</th>
+                <th>Ссылка на рабочие программы практик, предусмотренных соответствующей
+                    образовательной
+                    программой</th>
+                <th>Ссылка на методические и иные документы, разработанные для
+                    обеспечения образовательного процесса, а
+                    также рабочие программы воспитания и календарные планы воспитательной работы, включаемых в ООП</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+            </tr>
+            <tr align="center" itemprop="eduAdOp">
+                <td itemprop="eduCode">Остутствует</td>
+                <td itemprop="eduName">Остутствует</td>
+                <td itemprop="eduLevel">Остутствует</td>
+                <td itemprop="eduProf">Остутствует</td>
+                <td itemprop="eduForm">Остутствует</td>
+                <td itemprop="opMain">Остутствует</td>
+                <td itemprop="educationPlan">Остутствует</td>
+                <td itemprop="educationRpd">Остутствует</td>
+                <td itemprop="educationShedule">Остутствует</td>
+                <td itemprop="eduPr">Остутствует</td>
+                <td itemprop="methodology">Остутствует</td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+
+
+    <br>
+    <h2 class="subtitle">Информация о направлениях и результатах научной (научно-исследовательской)
+        деятельности</h2>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Код, шифр</th>
+                <th>Наименование специальности, направления подготовки, наименование группы
+                    научных специальностей</th>
+                <th>Перечень научных направлений, в рамках которых ведется научная
+                    (научно-исследовательская) деятельность</th>
+                <th>Образовательная программа, направленность, профиль, шифр и наименование
+                    научной специальности</th>
+                <th>Уровень образования</th>
+                <th>Название научного направления/научной школы</th>
+                <th>Результаты научной (научно-исследовательской) деятельности</th>
+                <th>Сведения о научно-исследовательской базе для осуществления научной
+                    (научно-исследовательской) деятельности</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr align="center" itemprop="eduNir">
+                <td itemprop="eduCode">Остутствует</td>
+                <td itemprop="eduName">Остутствует</td>
+                <td itemprop="perechenNir">Остутствует</td>
+                <td itemprop="eduProf">Остутствует</td>
+                <td itemprop="eduLevel">Остутствует</td>
+                <td itemprop="napravNir">Остутствует</td>
+                <td itemprop="resultNir">Остутствует</td>
+                <td itemprop="baseNir">Остутствует</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h2 class="subtitle">Информация о трудоустройстве выпускников за прошлый учебный год</h2>
+    <p>В 2021-2022 учебном году в АНО ВО "РУМТ" (прежнее сокращенное наименование: АНО ВО "Метатех") выпускников не
+        было.</p>
+    <div class="table-block">
+        <table class="table">
+            <tr>
+                <th>Код</th>
+                <th>Наименование профессии, специальности, направления подготовки наименование группы научных
+                    специальностей</th>
+                <th>Образовательная программа, направленность, профиль, шифр и наименование научной специальности</th>
+                <th>Количество выпускников</th>
+                <th>Количество трудоустроенных выпускников</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr align="center" itemprop="graduateJob">
+                <td itemprop="eduCode">Отсутствует</td>
+                <td itemprop="eduName">Отсутствует</td>
+                <td itemprop="eduProf">Отсутствует</td>
+                <td itemprop="v1">Отсутствует</td>
+                <td itemprop="t1">Отсутствует</td>
+            </tr>
+        </table>
+    </div>
+</div>
